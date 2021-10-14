@@ -26,5 +26,40 @@ namespace UNN1N9_HFT_2021221.Data
                     .UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\MyDatabase.mdf;Integrated Security=True");
             }
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            #region INIT
+            
+            //artists
+            Artist kidcudi = new Artist() 
+            { 
+                ArtistName = "Kid Cudi", 
+                RealName = "Scott Ramon Seguro Mescudi", 
+                Age = 37, 
+                NumberOfAlbums = 8 
+            };
+            Artist killstation = new Artist() 
+            { 
+                ArtistName = "Killstation", 
+                RealName = "Nolan Santana", 
+                Age = 23, 
+                NumberOfAlbums = 2 
+            };
+            Artist marshmello = new Artist() 
+            { 
+                ArtistName = "Marshmello", 
+                RealName = "Christopher Cornstock", 
+                Age = 29, 
+                NumberOfAlbums = 4
+            };
+            Artist joji = new Artist() 
+            { ArtistName = "Joji", 
+                RealName = "George Kusunoki Miller", 
+                Age = 29, 
+                NumberOfAlbums = 3 
+            };
+           
+            #endregion
+        }
     }
 }

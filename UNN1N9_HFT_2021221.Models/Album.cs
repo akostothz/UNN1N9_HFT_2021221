@@ -26,6 +26,10 @@ namespace UNN1N9_HFT_2021221.Models
         [Required]
         public string Style { get; set; }
 
+        [Required]
+        [MaxLength(4)]
+        public int Year { get; set; }
+
         [NotMapped]
         public virtual Artist Artist { get; set; }
 

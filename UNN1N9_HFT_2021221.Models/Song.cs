@@ -12,7 +12,7 @@ namespace UNN1N9_HFT_2021221.Models
     public class Song
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int SongID { get; set; }
 
