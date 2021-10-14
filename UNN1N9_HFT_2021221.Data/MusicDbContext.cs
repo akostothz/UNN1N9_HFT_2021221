@@ -58,7 +58,72 @@ namespace UNN1N9_HFT_2021221.Data
                 Age = 29, 
                 NumberOfAlbums = 3 
             };
-           
+
+            //albums
+            Album manonthemoon = new Album()
+            {
+                AlbumName = "Man On the Moon: The End of Day",
+                Artist = kidcudi,
+                PerformancerID = kidcudi.ArtistID,
+                Style = "HIPHOP/RAP",
+                Year = 2009
+            };
+            Album indicud = new Album()
+            {
+                AlbumName = "Indicud",
+                Artist = kidcudi,
+                PerformancerID = kidcudi.ArtistID,
+                Style = "HIPHOP/RAP",
+                Year = 2013
+            };
+            Album thetwoofus = new Album()
+            {
+                AlbumName = "The Two of Us Are Dying",
+                Artist = killstation,
+                PerformancerID = killstation.ArtistID,
+                Style = "ROCK",
+                Year = 2019
+            };
+            Album xxii = new Album()
+            {
+                AlbumName = "XXII",
+                Artist = killstation,
+                PerformancerID = killstation.ArtistID,
+                Style = "ALTERNATIVE",
+                Year = 2021
+            };
+            Album shockwave = new Album()
+            {
+                AlbumName = "Shockwave",
+                Artist = marshmello,
+                PerformancerID = marshmello.ArtistID,
+                Style = "DANCE",
+                Year = 2021
+            };
+            Album joytime2 = new Album()
+            {
+                AlbumName = "Joytime II",
+                Artist = marshmello,
+                PerformancerID = marshmello.ArtistID,
+                Style = "DANCE",
+                Year = 2018
+            };
+            Album ballads1 = new Album()
+            {
+                AlbumName = "BALLADS 1",
+                Artist = joji,
+                PerformancerID = joji.ArtistID,
+                Style = "R&B AND SOUL",
+                Year = 2018
+            };
+            Album nectar = new Album()
+            {
+                AlbumName = "Nectar",
+                Artist = joji,
+                PerformancerID = joji.ArtistID,
+                Style = "ALTERNATIVE",
+                Year = 2020
+            };
             #endregion
         }
     }
