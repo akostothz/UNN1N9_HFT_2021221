@@ -26,7 +26,7 @@ namespace UNN1N9_HFT_2021221.Models
         [MaxLength(3)]
         public int? Age { get; set; }
 
-        [MaxLength(2)]
+        [MaxLength(3)]
         public int? NumberOfAlbums { get; set; }
 
         public virtual ICollection<Album> Albums { get; set; }
