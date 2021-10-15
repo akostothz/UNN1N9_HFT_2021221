@@ -84,14 +84,6 @@ namespace UNN1N9_HFT_2021221.Data
                 Style = "ROCK",
                 Year = 2019
             };
-            Album xxii = new Album()
-            {
-                AlbumName = "XXII",
-                Artist = killstation,
-                PerformancerID = killstation.ArtistID,
-                Style = "ALTERNATIVE",
-                Year = 2021
-            };
             Album shockwave = new Album()
             {
                 AlbumName = "Shockwave",
@@ -99,14 +91,6 @@ namespace UNN1N9_HFT_2021221.Data
                 PerformancerID = marshmello.ArtistID,
                 Style = "DANCE",
                 Year = 2021
-            };
-            Album joytime2 = new Album()
-            {
-                AlbumName = "Joytime II",
-                Artist = marshmello,
-                PerformancerID = marshmello.ArtistID,
-                Style = "DANCE",
-                Year = 2018
             };
             Album ballads1 = new Album()
             {
@@ -168,25 +152,13 @@ namespace UNN1N9_HFT_2021221.Data
             };
             Song s5 = new Song()
             {
-                SongName = "Poison",
+                SongName = "Extinction",
                 PerformancerID = killstation.ArtistID,
-                AlbumID = xxii.AlbumID,
-                Length = 2,
-                Style = xxii.Style,
-                Artist = xxii.Artist,
-                Album = xxii
+                Length = 1,
+                Style = "METALLIC",
+                Artist = killstation
             };
             Song s6 = new Song()
-            {
-                SongName = "So Many Things",
-                PerformancerID = killstation.ArtistID,
-                AlbumID = xxii.AlbumID,
-                Length = 2,
-                Style = xxii.Style,
-                Artist = xxii.Artist,
-                Album = xxii
-            };
-            Song s7 = new Song()
             {
                 SongName = "Sarcoma",
                 PerformancerID = killstation.ArtistID,
@@ -196,27 +168,7 @@ namespace UNN1N9_HFT_2021221.Data
                 Artist = thetwoofus.Artist,
                 Album = thetwoofus
             };
-            Song s8 = new Song()
-            {
-                SongName = "Premonition",
-                PerformancerID = killstation.ArtistID,
-                AlbumID = thetwoofus.AlbumID,
-                Length = 2,
-                Style = thetwoofus.Style,
-                Artist = thetwoofus.Artist,
-                Album = thetwoofus
-            };
-            Song s9 = new Song()
-            {
-                SongName = "Singing to You, in Your Grave",
-                PerformancerID = killstation.ArtistID,
-                AlbumID = thetwoofus.AlbumID,
-                Length = 2,
-                Style = thetwoofus.Style,
-                Artist = thetwoofus.Artist,
-                Album = thetwoofus
-            };
-            Song s10 = new Song()
+            Song s7 = new Song()
             {
                 SongName = "Attraction",
                 PerformancerID = killstation.ArtistID,
@@ -226,17 +178,7 @@ namespace UNN1N9_HFT_2021221.Data
                 Artist = thetwoofus.Artist,
                 Album = thetwoofus
             };
-            Song s11 = new Song()
-            {
-                SongName = "Soundtrack 2 My Life",
-                PerformancerID = kidcudi.ArtistID,
-                AlbumID = manonthemoon.AlbumID,
-                Length = 4,
-                Style = manonthemoon.Style,
-                Artist = manonthemoon.Artist,
-                Album = manonthemoon
-            };
-            Song s12 = new Song()
+            Song s8 = new Song()
             {
                 SongName = "Day 'n' Nite",
                 PerformancerID = kidcudi.ArtistID,
@@ -246,27 +188,8 @@ namespace UNN1N9_HFT_2021221.Data
                 Artist = manonthemoon.Artist,
                 Album = manonthemoon
             };
-            Song s13 = new Song()
-            {
-                SongName = "Pursuit of Happiness (Nightmare)",
-                PerformancerID = kidcudi.ArtistID,
-                AlbumID = manonthemoon.AlbumID,
-                Length = 5,
-                Style = manonthemoon.Style,
-                Artist = manonthemoon.Artist,
-                Album = manonthemoon
-            };
-            Song s14 = new Song()
-            {
-                SongName = "Mad Solar",
-                PerformancerID = kidcudi.ArtistID,
-                AlbumID = indicud.AlbumID,
-                Length = 4,
-                Style = indicud.Style,
-                Artist = indicud.Artist,
-                Album = indicud
-            };
             #endregion
+
         }
     }
 }
