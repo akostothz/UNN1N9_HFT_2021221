@@ -17,18 +17,14 @@ namespace UNN1N9_HFT_2021221.Models
         public int AlbumID { get; set; }
 
         [Required]
-        public int PerformancerID { get; set; }
+        [ForeignKey(nameof(Models.Artist))]
+        public virtual int ArtistID { get; set; }
 
         [Required]
         [MaxLength(150)]
         public string AlbumName { get; set; }
 
-        [Required]
         public string Style { get; set; }
-
-        [Required]
-        [MaxLength(4)]
-        public int Year { get; set; }
 
         [NotMapped]
         public virtual Artist Artist { get; set; }

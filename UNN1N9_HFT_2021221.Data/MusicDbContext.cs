@@ -29,195 +29,77 @@ namespace UNN1N9_HFT_2021221.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region INIT
-            
-            //artists
-            Artist kidcudi = new Artist() 
-            { 
-                ArtistName = "Kid Cudi", 
-                RealName = "Scott Ramon Seguro Mescudi", 
-                Age = 37, 
-                NumberOfAlbums = 8 
-            };
-            Artist killstation = new Artist() 
-            { 
-                ArtistName = "Killstation", 
-                RealName = "Nolan Santana", 
-                Age = 23, 
-                NumberOfAlbums = 2 
-            };
-            Artist marshmello = new Artist() 
-            { 
-                ArtistName = "Marshmello", 
-                RealName = "Christopher Cornstock", 
-                Age = 29, 
-                NumberOfAlbums = 4
-            };
-            Artist joji = new Artist() 
-            { ArtistName = "Joji", 
-                RealName = "George Kusunoki Miller", 
-                Age = 29, 
-                NumberOfAlbums = 3 
+
+            //artist initialization
+            Artist ar1 = new Artist() { ArtistID = 1, ArtistName = "Kid Cudi", NumberOfAlbums = 8 };
+            Artist ar2 = new Artist() { ArtistID = 2, ArtistName = "Killstation", NumberOfAlbums = 2 };
+            Artist ar3 = new Artist() { ArtistID = 3, ArtistName = "Marshmello", NumberOfAlbums = 4 };
+            Artist ar4 = new Artist() { ArtistID = 4, ArtistName = "Joji", NumberOfAlbums = 3
             };
 
-            //albums
-            Album manonthemoon = new Album()
-            {
-                AlbumName = "Man On the Moon: The End of Day",
-                Artist = kidcudi,
-                PerformancerID = kidcudi.ArtistID,
-                Style = "HIPHOP/RAP",
-                Year = 2009
-            };
-            Album indicud = new Album()
-            {
-                AlbumName = "Indicud",
-                Artist = kidcudi,
-                PerformancerID = kidcudi.ArtistID,
-                Style = "HIPHOP/RAP",
-                Year = 2013
-            };
-            Album thetwoofus = new Album()
-            {
-                AlbumName = "The Two of Us Are Dying",
-                Artist = killstation,
-                PerformancerID = killstation.ArtistID,
-                Style = "ROCK",
-                Year = 2019
-            };
-            Album shockwave = new Album()
-            {
-                AlbumName = "Shockwave",
-                Artist = marshmello,
-                PerformancerID = marshmello.ArtistID,
-                Style = "DANCE",
-                Year = 2021
-            };
-            Album ballads1 = new Album()
-            {
-                AlbumName = "BALLADS 1",
-                Artist = joji,
-                PerformancerID = joji.ArtistID,
-                Style = "R&B AND SOUL",
-                Year = 2018
-            };
-            Album nectar = new Album()
-            {
-                AlbumName = "Nectar",
-                Artist = joji,
-                PerformancerID = joji.ArtistID,
-                Style = "ALTERNATIVE",
-                Year = 2020
-            };
+            //album initialization
+            Album al1 = new Album() { AlbumID = 1, AlbumName = "Man On the Moon: The End of Day", Style = "HIPHOP/RAP" };
+            Album al2 = new Album() { AlbumID = 2, AlbumName = "The Two of Us Are Dying", Style = "ROCK" };
+            Album al3 = new Album() { AlbumID = 3, AlbumName = "Shockwave", Style = "DANCE" };
+            Album al4 = new Album() { AlbumID = 4, AlbumName = "BALLADS 1", Style = "R&B AND SOUL" };
+            Album al5 = new Album() { AlbumID = 5, AlbumName = "Nectar", Style = "ALTERNATIVE" };
 
-            //songs
-            Song s1 = new Song()
-            {
-                SongName = "SLOW DANCING IN THE DARK",
-                PerformancerID = joji.ArtistID,
-                AlbumID = ballads1.AlbumID,
-                Length = 3,
-                Style = ballads1.Style,
-                Artist = ballads1.Artist,
-                Album = ballads1
-            };
-            Song s2 = new Song()
-            {
-                SongName = "YEAH RIGHT",
-                PerformancerID = joji.ArtistID,
-                AlbumID = ballads1.AlbumID,
-                Length = 3,
-                Style = ballads1.Style,
-                Artist = ballads1.Artist,
-                Album = ballads1
-            };
-            Song s3 = new Song()
-            {
-                SongName = "Gimme Love",
-                PerformancerID = joji.ArtistID,
-                AlbumID = nectar.AlbumID,
-                Length = 4,
-                Style = nectar.Style,
-                Artist = nectar.Artist,
-                Album = nectar
-            };
-            Song s4 = new Song()
-            {
-                SongName = "Shockwave",
-                PerformancerID = marshmello.ArtistID,
-                AlbumID = shockwave.AlbumID,
-                Length = 3,
-                Style = shockwave.Style,
-                Artist = shockwave.Artist,
-                Album = shockwave
-            };
-            Song s5 = new Song()
-            {
-                SongName = "Extinction",
-                PerformancerID = killstation.ArtistID,
-                Length = 1,
-                Style = thetwoofus.Style,
-                Artist = thetwoofus.Artist,
-                Album = thetwoofus
-            };
-            Song s6 = new Song()
-            {
-                SongName = "Sarcoma",
-                PerformancerID = killstation.ArtistID,
-                AlbumID = thetwoofus.AlbumID,
-                Length = 2,
-                Style = thetwoofus.Style,
-                Artist = thetwoofus.Artist,
-                Album = thetwoofus
-            };
-            Song s7 = new Song()
-            {
-                SongName = "Attraction",
-                PerformancerID = killstation.ArtistID,
-                AlbumID = thetwoofus.AlbumID,
-                Length = 3,
-                Style = thetwoofus.Style,
-                Artist = thetwoofus.Artist,
-                Album = thetwoofus
-            };
-            Song s8 = new Song()
-            {
-                SongName = "Day 'n' Nite",
-                PerformancerID = kidcudi.ArtistID,
-                AlbumID = manonthemoon.AlbumID,
-                Length = 4,
-                Style = manonthemoon.Style,
-                Artist = manonthemoon.Artist,
-                Album = manonthemoon
-            };
+            //song initialization
+            Song s1 = new Song() { SongID = 1, SongName = "SLOW DANCING IN THE DARK", Style = "R&B AND SOUL" };
+            Song s2 = new Song() { SongID = 2, SongName = "YEAH RIGHT", Style = "R&B AND SOUL" };
+            Song s3 = new Song() { SongID = 3, SongName = "Gimme Love", Style = "ALTERNATIVE" };
+            Song s4 = new Song() { SongID = 4, SongName = "Shockwave", Style = "DANCE" };
+            Song s5 = new Song() { SongID = 5, SongName = "Extinction", Style = "ROCK" };
+            Song s6 = new Song() { SongID = 6, SongName = "Sarcoma", Style = "ROCK" };
+            Song s7 = new Song() { SongID = 7, SongName = "Attraction", Style = "ROCK" };
+            Song s8 = new Song() { SongID = 8, SongName = "Day 'n' Nite", Style = "HIPHOP/RAP" };
+
             #endregion
 
-            //fluent API
-            modelBuilder.Entity<Artist>(entity =>
-            {
-                entity.HasMany(a => a.Albums)
-                        .WithOne()
-                        .OnDelete(DeleteBehavior.ClientSetNull);
-            });
+
+            #region CONNECTIONS
+
+            al1.ArtistID = ar1.ArtistID;
+            al2.ArtistID = ar2.ArtistID;
+            al3.ArtistID = ar3.ArtistID;
+            al5.ArtistID = ar4.ArtistID;
+            al4.ArtistID = ar4.ArtistID;
+
+            s8.AlbumID = al1.AlbumID;
+            s7.AlbumID = al2.AlbumID;
+            s6.AlbumID = al2.AlbumID;
+            s5.AlbumID = al2.AlbumID;
+            s4.AlbumID = al3.AlbumID;
+            s3.AlbumID = al5.AlbumID;
+            s2.AlbumID = al4.AlbumID;
+            s1.AlbumID = al4.AlbumID;
+
+            #endregion
+
+
+            #region FLUENTAPI
 
             modelBuilder.Entity<Album>(entity =>
             {
-                entity.HasMany(a => a.Songs)
-                        .WithOne(a => a.Album)
-                        .HasForeignKey(a => a.PerformancerID)
+                entity.HasOne(album => album.Artist)
+                        .WithMany(artist => artist.Albums)
+                        .HasForeignKey(album => album.ArtistID)
                         .OnDelete(DeleteBehavior.ClientSetNull);
             });
 
             modelBuilder.Entity<Song>(entity =>
             {
-                entity.HasOne(a => a.Album)
-                        .WithMany(a => a.Songs)
-                        .HasForeignKey(a => a.PerformancerID)
+                entity.HasOne(song => song.Album)
+                        .WithMany(album => album.Songs)
+                        .HasForeignKey(song => song.AlbumID)
                         .OnDelete(DeleteBehavior.ClientSetNull);
             });
-
-            modelBuilder.Entity<Artist>().HasData(kidcudi, killstation, marshmello, joji);
-            modelBuilder.Entity<Album>().HasData(manonthemoon, indicud, thetwoofus, nectar, ballads1, shockwave);
+            
+            modelBuilder.Entity<Artist>().HasData(ar1, ar2, ar3, ar4);
+            modelBuilder.Entity<Album>().HasData(al1, al2, al3, al4, al5);
             modelBuilder.Entity<Song>().HasData(s1, s2, s3, s4, s5, s6, s7, s8);
+
+            #endregion
         }
     }
 }

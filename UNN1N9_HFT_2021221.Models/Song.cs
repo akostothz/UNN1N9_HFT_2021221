@@ -17,27 +17,18 @@ namespace UNN1N9_HFT_2021221.Models
         public int SongID { get; set; }
 
         [Required]
-        public int PerformancerID { get; set; }
+        [ForeignKey(nameof(Models.Album))]
+        public virtual int AlbumID { get; set; }
 
-        public int? AlbumID { get; set; }
-        
         [Required]
         public string SongName { get; set; }
 
-        [MaxLength(3)]
-        [Required]
-        public int Length { get; set; }
-
-        [Required]
         public string Style { get; set; }
-
-        [NotMapped]
-        public virtual Artist Artist { get; set; }
 
         [NotMapped]
         public virtual Album Album { get; set; }
 
         [NotMapped]
-        public string AllData => $"[{SongID}]: {SongName} BY ID OF {PerformancerID} >> (LENGTH: {Length}, STYLE: {Style})";
+        public string AllData => $"[{SongID}]: {SongName} by {Album.Artist.ArtistName} >> (STYLE: {Style})";
     }
 }
