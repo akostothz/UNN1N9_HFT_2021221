@@ -155,8 +155,9 @@ namespace UNN1N9_HFT_2021221.Data
                 SongName = "Extinction",
                 PerformancerID = killstation.ArtistID,
                 Length = 1,
-                Style = "METALLIC",
-                Artist = killstation
+                Style = thetwoofus.Style,
+                Artist = thetwoofus.Artist,
+                Album = thetwoofus
             };
             Song s6 = new Song()
             {
@@ -190,6 +191,33 @@ namespace UNN1N9_HFT_2021221.Data
             };
             #endregion
 
+            //fluent API
+            modelBuilder.Entity<Artist>(entity =>
+            {
+                entity.HasMany(a => a.Albums)
+                        .WithOne()
+                        .OnDelete(DeleteBehavior.ClientSetNull);
+            });
+
+            modelBuilder.Entity<Album>(entity =>
+            {
+                entity.HasMany(a => a.Songs)
+                        .WithOne(a => a.Album)
+                        .HasForeignKey(a => a.PerformancerID)
+                        .OnDelete(DeleteBehavior.ClientSetNull);
+            });
+
+            modelBuilder.Entity<Song>(entity =>
+            {
+                entity.HasOne(a => a.Album)
+                        .WithMany(a => a.Songs)
+                        .HasForeignKey(a => a.PerformancerID)
+                        .OnDelete(DeleteBehavior.ClientSetNull);
+            });
+
+            modelBuilder.Entity<Artist>().HasData(kidcudi, killstation, marshmello, joji);
+            modelBuilder.Entity<Album>().HasData(manonthemoon, indicud, thetwoofus, nectar, ballads1, shockwave);
+            modelBuilder.Entity<Song>().HasData(s1, s2, s3, s4, s5, s6, s7, s8);
         }
     }
 }
