@@ -1,7 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UNN1N9_HFT_2021221.Data\UNN1N9_HFT_2021221.Data.csproj" />
+    <ProjectReference Include="..\UNN1N9_HFT_2021221.Models\UNN1N9_HFT_2021221.Models.csproj" />
+  </ItemGroup>
 
 </Project>
