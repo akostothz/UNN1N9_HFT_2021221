@@ -24,7 +24,13 @@ namespace UNN1N9_HFT_2021221.Models
         [MaxLength(150)]
         public string AlbumName { get; set; }
 
+        [Required]
         public string Style { get; set; }
+
+        public double Rating { get; set; }
+
+        [Required]
+        public int Year { get; set; }
 
         [NotMapped]
         public virtual Artist Artist { get; set; }

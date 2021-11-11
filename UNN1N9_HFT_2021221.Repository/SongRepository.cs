@@ -40,6 +40,8 @@ namespace UNN1N9_HFT_2021221.Repository
             oldSong.SongName = song.SongName;
             oldSong.Style = song.Style;
             oldSong.AlbumID = song.AlbumID;
+            oldSong.Length = song.Length;
+            oldSong.IsExplicit = song.IsExplicit;
             dbCon.SaveChanges();
         }
 

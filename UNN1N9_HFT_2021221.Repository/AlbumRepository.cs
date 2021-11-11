@@ -40,6 +40,8 @@ namespace UNN1N9_HFT_2021221.Repository
             oldAlbum.AlbumName = album.AlbumName;
             oldAlbum.Style = album.Style;
             oldAlbum.ArtistID = album.ArtistID;
+            oldAlbum.Rating = album.Rating;
+            oldAlbum.Year = album.Year;
             dbCon.SaveChanges();
         }
 

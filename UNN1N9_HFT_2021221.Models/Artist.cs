@@ -20,6 +20,9 @@ namespace UNN1N9_HFT_2021221.Models
         [MaxLength(50)]
         public string ArtistName { get; set; }
 
+        [Required]
+        public string CountryOfOrigin { get; set; }
+
         public int? NumberOfAlbums { get; set; }
 
         public virtual ICollection<Album> Albums { get; set; }

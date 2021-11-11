@@ -23,7 +23,14 @@ namespace UNN1N9_HFT_2021221.Models
         [Required]
         public string SongName { get; set; }
 
+        [Required]
         public string Style { get; set; }
+
+        [Required]
+        public int Length { get; set; }
+
+        [Required]
+        public bool IsExplicit { get; set; }
 
         [NotMapped]
         public virtual Album Album { get; set; }

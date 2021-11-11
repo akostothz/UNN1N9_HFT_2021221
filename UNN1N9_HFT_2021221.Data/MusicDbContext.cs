@@ -31,27 +31,27 @@ namespace UNN1N9_HFT_2021221.Data
             #region INIT
 
             //artist initialization
-            Artist ar1 = new Artist() { ArtistID = 1, ArtistName = "Kid Cudi", NumberOfAlbums = 8 };
-            Artist ar2 = new Artist() { ArtistID = 2, ArtistName = "Killstation", NumberOfAlbums = 2 };
-            Artist ar3 = new Artist() { ArtistID = 3, ArtistName = "Marshmello", NumberOfAlbums = 4 };
-            Artist ar4 = new Artist() { ArtistID = 4, ArtistName = "Joji", NumberOfAlbums = 3 };
+            Artist ar1 = new Artist() { ArtistID = 1, ArtistName = "Kid Cudi", NumberOfAlbums = 8, CountryOfOrigin = "USA" };
+            Artist ar2 = new Artist() { ArtistID = 2, ArtistName = "Killstation", NumberOfAlbums = 2, CountryOfOrigin = "USA" };
+            Artist ar3 = new Artist() { ArtistID = 3, ArtistName = "Marshmello", NumberOfAlbums = 4, CountryOfOrigin = "USA" };
+            Artist ar4 = new Artist() { ArtistID = 4, ArtistName = "Joji", NumberOfAlbums = 3, CountryOfOrigin = "JAPAN" };
 
             //album initialization
-            Album al1 = new Album() { AlbumID = 1, AlbumName = "Man On the Moon: The End of Day", Style = "HIPHOP/RAP" };
-            Album al2 = new Album() { AlbumID = 2, AlbumName = "The Two of Us Are Dying", Style = "ROCK" };
-            Album al3 = new Album() { AlbumID = 3, AlbumName = "Shockwave", Style = "DANCE" };
-            Album al4 = new Album() { AlbumID = 4, AlbumName = "BALLADS 1", Style = "R&B AND SOUL" };
-            Album al5 = new Album() { AlbumID = 5, AlbumName = "Nectar", Style = "ALTERNATIVE" };
+            Album al1 = new Album() { AlbumID = 1, AlbumName = "Man On the Moon: The End of Day", Style = "HIPHOP/RAP", Rating = 4.1, Year = 2008 };
+            Album al2 = new Album() { AlbumID = 2, AlbumName = "The Two of Us Are Dying", Style = "ROCK", Rating = 8.3, Year = 2019 };
+            Album al3 = new Album() { AlbumID = 3, AlbumName = "Shockwave", Style = "DANCE", Rating = 3.5, Year = 2021 };
+            Album al4 = new Album() { AlbumID = 4, AlbumName = "BALLADS 1", Style = "R&B AND SOUL", Rating = 6.7, Year = 2018 };
+            Album al5 = new Album() { AlbumID = 5, AlbumName = "Nectar", Style = "ALTERNATIVE", Rating = 8.1, Year = 2020 };
 
             //song initialization
-            Song s1 = new Song() { SongID = 1, SongName = "SLOW DANCING IN THE DARK", Style = "R&B AND SOUL" };
-            Song s2 = new Song() { SongID = 2, SongName = "YEAH RIGHT", Style = "R&B AND SOUL" };
-            Song s3 = new Song() { SongID = 3, SongName = "Gimme Love", Style = "ALTERNATIVE" };
-            Song s4 = new Song() { SongID = 4, SongName = "Shockwave", Style = "DANCE" };
-            Song s5 = new Song() { SongID = 5, SongName = "Extinction", Style = "ROCK" };
-            Song s6 = new Song() { SongID = 6, SongName = "Sarcoma", Style = "ROCK" };
-            Song s7 = new Song() { SongID = 7, SongName = "Attraction", Style = "ROCK" };
-            Song s8 = new Song() { SongID = 8, SongName = "Day 'n' Nite", Style = "HIPHOP/RAP" };
+            Song s1 = new Song() { SongID = 1, SongName = "SLOW DANCING IN THE DARK", Style = "R&B AND SOUL", Length = 4, IsExplicit = true };
+            Song s2 = new Song() { SongID = 2, SongName = "YEAH RIGHT", Style = "R&B AND SOUL", Length = 3, IsExplicit = true };
+            Song s3 = new Song() { SongID = 3, SongName = "Gimme Love", Style = "ALTERNATIVE", Length = 3, IsExplicit = false };
+            Song s4 = new Song() { SongID = 4, SongName = "Shockwave", Style = "DANCE", Length = 3, IsExplicit = false };
+            Song s5 = new Song() { SongID = 5, SongName = "Extinction", Style = "ROCK", Length = 1, IsExplicit = false };
+            Song s6 = new Song() { SongID = 6, SongName = "Sarcoma", Style = "ROCK", Length = 3, IsExplicit = false };
+            Song s7 = new Song() { SongID = 7, SongName = "Attraction", Style = "ROCK", Length = 4, IsExplicit = false };
+            Song s8 = new Song() { SongID = 8, SongName = "Day 'n' Nite", Style = "HIPHOP/RAP", Length = 5, IsExplicit = false };
 
             #endregion
 

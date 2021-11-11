@@ -39,6 +39,7 @@ namespace UNN1N9_HFT_2021221.Repository
             Artist oldArtist = Read(artist.ArtistID);
             oldArtist.ArtistName = artist.ArtistName;
             oldArtist.NumberOfAlbums = artist.NumberOfAlbums;
+            oldArtist.CountryOfOrigin = artist.CountryOfOrigin;
             dbCon.SaveChanges();
         }
 
