@@ -85,7 +85,7 @@ namespace UNN1N9_HFT_2021221.Logic
                    (g.Key, g.Sum(y => y.Length));
         }
 
-        //number of love songs made after 2015 minutes by artists
+        //number of love songs made after 2015 by artists
         public IEnumerable<KeyValuePair<string, int>> NumberOfLoveSongsAfter2015ByArtists()
         {
             return from x in songRepo.ReadAll()
