@@ -42,6 +42,7 @@ namespace UNN1N9_HFT_2021221.Repository
             oldSong.AlbumID = song.AlbumID;
             oldSong.Length = song.Length;
             oldSong.IsExplicit = song.IsExplicit;
+            oldSong.IsLoveSong = song.IsLoveSong;
             dbCon.SaveChanges();
         }
 

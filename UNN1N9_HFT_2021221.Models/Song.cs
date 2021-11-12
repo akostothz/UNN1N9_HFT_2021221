@@ -32,6 +32,9 @@ namespace UNN1N9_HFT_2021221.Models
         [Required]
         public bool IsExplicit { get; set; }
 
+        [Required]
+        public bool IsLoveSong { get; set; }
+
         [NotMapped]
         public virtual Album Album { get; set; }
 

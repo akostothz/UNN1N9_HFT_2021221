@@ -10,5 +10,6 @@ namespace UNN1N9_HFT_2021221.Logic
         Album Read(int id);
         IEnumerable<Album> ReadAll();
         void Update(Album album);
+        IEnumerable<KeyValuePair<string, int>> NumberOfAlbumsWBiggerRatingThan8ByCountries();
     }
 }

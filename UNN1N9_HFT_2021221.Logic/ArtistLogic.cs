@@ -22,6 +22,10 @@ namespace UNN1N9_HFT_2021221.Logic
 
         public void Create(Artist artist)
         {
+            if (artist.ArtistName == String.Empty)
+            {
+                throw new ArgumentException("ERR :: The name of the artist can not be empty.");
+            }
             artistRepo.Create(artist);
         }
 
@@ -47,9 +51,5 @@ namespace UNN1N9_HFT_2021221.Logic
 
         #endregion
 
-
-        #region NON-CRUDmethods
-
-        #endregion
     }
 }

@@ -10,5 +10,9 @@ namespace UNN1N9_HFT_2021221.Logic
         Song Read(int id);
         IEnumerable<Song> ReadAll();
         void Update(Song song);
+        IEnumerable<KeyValuePair<string, double>> AVGLengthByAlbums();
+        IEnumerable<KeyValuePair<string, int>> NumberOfExplicitSongsByArtists();
+        IEnumerable<KeyValuePair<string, int>> LengthOfAllSongsByCountries();
+        IEnumerable<KeyValuePair<string, int>> NumberOfLoveSongsAfter2015ByArtists();
     }
 }
