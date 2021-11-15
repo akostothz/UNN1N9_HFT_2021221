@@ -45,11 +45,19 @@ namespace UNN1N9_HFT_2021221.Logic
 
         public void Update(Song song)
         {
+            if (song.Length <= 0)
+            {
+                throw new ArgumentException("ERR :: The length of the song can not be less or equal to zero.");
+            }
             songRepo.Update(song);
         }
 
         public void Delete(int id)
         {
+            if (id <= 0)
+            {
+                throw new ArgumentException("ERR :: The ID can not be lesser or equal to zero.");
+            }
             songRepo.Delete(id);
         }
 

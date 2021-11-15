@@ -118,15 +118,15 @@ namespace UNN1N9_HFT_2021221.Test
         #region OPTIONAL.TESTS
 
         [Test]
-        public void CreateAlbumWithBiggerRatingThan10Test()
+        public void UpdateSongWithNegativeLengthTest()
         {
-            Assert.Throws(typeof(ArgumentException), () => albumLogic.Create(new Album() { AlbumName = "Pure Heroine", Rating = 10.1 }));
+            Assert.Throws(typeof(ArgumentException), () => songLogic.Update(new Song() { SongName = "Space Song", Length = -2 }));
         }
 
         [Test]
-        public void CreateAlbumWithNegativeRatingTest()
+        public void DeleteSongWithNegativeIDTest()
         {
-            Assert.Throws(typeof(ArgumentException), () => albumLogic.Create(new Album() { AlbumName = "Depression Cherry", Rating = -1.2 }));
+            Assert.Throws(typeof(ArgumentException), () => songLogic.Delete(-1));
         }
 
         #endregion
