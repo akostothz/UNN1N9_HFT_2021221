@@ -21,7 +21,7 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
             this.albumLogic = alLog;
         }
 
-        // GET: /stat/avglengths
+        // GET: /stat/avglengthsbyalbums
         [HttpGet]
         public IEnumerable<KeyValuePair<string, double>> AVGLengthByAlbums()
         {
