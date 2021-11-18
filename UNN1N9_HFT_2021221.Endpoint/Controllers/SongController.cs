@@ -26,29 +26,32 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
             return songLogic.ReadAll();
         }
 
-        // GET api/<SongController>/5
+        // GET /song/4
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Song Get(int id)
         {
-            return "value";
+            return songLogic.Read(id);
         }
 
-        // POST api/<SongController>
+        // POST /song
         [HttpPost]
-        public void Post([FromBody] string value) //create
+        public void Post([FromBody] Song value) //create
         {
+            songLogic.Create(value);
         }
 
-        // PUT api/<SongController>/5
+        // PUT /song
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value) //update
+        public void Put(int id, [FromBody] Song value) //update
         {
+            songLogic.Update(value);
         }
 
-        // DELETE api/<SongController>/5
+        // DELETE /song/4
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            songLogic.Delete(id);
         }
     }
 }
