@@ -3,7 +3,7 @@ using UNN1N9_HFT_2021221.Models;
 
 namespace UNN1N9_HFT_2021221.Logic
 {
-    interface IArtistLogic
+    public interface IArtistLogic
     {
         void Create(Artist artist);
         void Delete(int id);

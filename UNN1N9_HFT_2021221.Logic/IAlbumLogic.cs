@@ -3,7 +3,7 @@ using UNN1N9_HFT_2021221.Models;
 
 namespace UNN1N9_HFT_2021221.Logic
 {
-    interface IAlbumLogic
+    public interface IAlbumLogic
     {
         void Create(Album album);
         void Delete(int id);

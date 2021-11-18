@@ -3,7 +3,7 @@ using UNN1N9_HFT_2021221.Models;
 
 namespace UNN1N9_HFT_2021221.Logic
 {
-    interface ISongLogic
+    public interface ISongLogic
     {
         void Create(Song song);
         void Delete(int id);

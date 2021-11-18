@@ -7,6 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UNN1N9_HFT_2021221.Data;
+using UNN1N9_HFT_2021221.Logic;
+using UNN1N9_HFT_2021221.Repository;
 
 namespace UNN1N9_HFT_2021221.Endpoint
 {
@@ -17,6 +20,19 @@ namespace UNN1N9_HFT_2021221.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //logic
+            services.AddTransient<ISongLogic, SongLogic>();
+            services.AddTransient<IAlbumLogic, AlbumLogic>();
+            services.AddTransient<IArtistLogic, ArtistLogic>();
+
+            //repo
+            services.AddTransient<ISongRepository, SongRepository>();
+            services.AddTransient<IAlbumRepository, AlbumRepository>();
+            services.AddTransient<IArtistRepository, ArtistRepository>();
+
+            //data
+            services.AddTransient<MusicDbContext, MusicDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
