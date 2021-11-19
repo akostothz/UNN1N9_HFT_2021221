@@ -19,6 +19,7 @@ namespace UNN1N9_HFT_2021221.Client
             //rest.Delete(13, "artist");
             //rest.Delete(12, "artist");
             //rest.Delete(11, "artist");
+            //commit test
 
             var artists = rest.Get<Artist>("artist");
 
