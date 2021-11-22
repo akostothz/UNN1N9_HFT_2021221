@@ -21,7 +21,7 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
             this.albumLogic = alLog;
         }
 
-        // GET: /stat/avglengthsbyalbums
+        // GET: /stat/avglengthbyalbums
         [HttpGet]
         public IEnumerable<KeyValuePair<string, double>> AVGLengthByAlbums()
         {
@@ -49,7 +49,7 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
             return songLogic.NumberOfLoveSongsAfter2015ByArtists();
         }
 
-        // GET: /stat/Nnumberofalbumswbiggerratingthan8bycountries
+        // GET: /stat/numberofalbumswbiggerratingthan8bycountries
         [HttpGet]
         public IEnumerable<KeyValuePair<string, int>> NumberOfAlbumsWBiggerRatingThan8ByCountries()
         {

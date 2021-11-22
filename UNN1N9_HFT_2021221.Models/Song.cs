@@ -40,7 +40,5 @@ namespace UNN1N9_HFT_2021221.Models
         [JsonIgnore]
         public virtual Album Album { get; set; }
 
-        [NotMapped]
-        public string AllData => $"[{SongID}]: {SongName} by {Album.Artist.ArtistName} >> (STYLE: {Style})";
     }
 }
