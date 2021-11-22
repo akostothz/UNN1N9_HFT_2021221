@@ -41,8 +41,8 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
         }
 
         // PUT /artist
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Artist value)
+        [HttpPut]
+        public void Put([FromBody] Artist value)
         {
             artistLogic.Update(value);
         }

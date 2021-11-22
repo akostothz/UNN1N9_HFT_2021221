@@ -41,8 +41,8 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
         }
 
         // PUT /song
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Song value) //update
+        [HttpPut]
+        public void Put([FromBody] Song value) //update
         {
             songLogic.Update(value);
         }

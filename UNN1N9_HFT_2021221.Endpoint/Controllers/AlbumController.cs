@@ -41,8 +41,8 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
         }
 
         // PUT /album
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Album value)
+        [HttpPut]
+        public void Put([FromBody] Album value)
         {
             albumLogic.Update(value);
         }

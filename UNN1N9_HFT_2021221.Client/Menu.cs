@@ -546,7 +546,7 @@ namespace UNN1N9_HFT_2021221.Client
 
                 rest.Put<Song>(new Song()
                 {
-                    //SongID = rest.GetSingle<Song>($"song/{Id}").SongID,
+                    SongID = Id,
                     SongName = sName,
                     Style = style,
                     Length = length,
