@@ -89,7 +89,6 @@ namespace UNN1N9_HFT_2021221.Client
             HttpResponseMessage response =
                 client.PutAsJsonAsync(endpoint, item).GetAwaiter().GetResult();
 
-
             response.EnsureSuccessStatusCode();
         }
     }

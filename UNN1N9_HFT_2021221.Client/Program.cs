@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace UNN1N9_HFT_2021221.Client
 {
@@ -7,7 +6,7 @@ namespace UNN1N9_HFT_2021221.Client
     {
         static void Main(string[] args)
         {
-            System.Threading.Thread.Sleep(8000);
+            Menu.Wait();
             RestService rest = new RestService("http://localhost:35739");
             Menu.Start(rest);
 

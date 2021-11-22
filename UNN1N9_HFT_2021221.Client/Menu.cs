@@ -28,6 +28,27 @@ namespace UNN1N9_HFT_2021221.Client
 
             menu.Show();
         }
+        public static void Wait()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("Welcome to Your Database!");
+            Console.WriteLine("\n\n\n");
+            System.Threading.Thread.Sleep(1500);
+            Console.WriteLine("Please wait a couple of seconds while we gather the data for You..");
+            System.Threading.Thread.Sleep(4000);
+            Console.WriteLine("\n\n\n");
+            Console.ForegroundColor = ConsoleColor.DarkCyan;
+            Console.WriteLine("you just got rickrolled lmao");
+            System.Threading.Thread.Sleep(500);
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine("Data gathered!");
+            Console.WriteLine("\n\n");
+            System.Threading.Thread.Sleep(1000);
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("Starting...");
+            System.Threading.Thread.Sleep(1000);
+        }
 
         #region CRUD
 
@@ -397,7 +418,7 @@ namespace UNN1N9_HFT_2021221.Client
             Console.WriteLine("[1] >> ALBUM");
             Console.WriteLine("[2] >> SONG");
             Console.WriteLine("\n");
-            Console.WriteLine("[TYPE YOUR ANSWER..] >> ");
+            Console.Write("[TYPE YOUR ANSWER..] >> ");
 
             int readin = 0;
             try
