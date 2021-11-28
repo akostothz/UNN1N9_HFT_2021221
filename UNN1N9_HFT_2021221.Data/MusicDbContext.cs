@@ -127,7 +127,7 @@ namespace UNN1N9_HFT_2021221.Data
                 entity.HasOne(album => album.Artist)
                         .WithMany(artist => artist.Albums)
                         .HasForeignKey(album => album.ArtistID)
-                        .OnDelete(DeleteBehavior.ClientSetNull);
+                        .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Song>(entity =>
@@ -135,7 +135,7 @@ namespace UNN1N9_HFT_2021221.Data
                 entity.HasOne(song => song.Album)
                         .WithMany(album => album.Songs)
                         .HasForeignKey(song => song.AlbumID)
-                        .OnDelete(DeleteBehavior.ClientSetNull);
+                        .OnDelete(DeleteBehavior.Cascade);
             });
             
             modelBuilder.Entity<Artist>().HasData(ar1, ar2, ar3, ar4, ar5, ar6, ar7, ar8, ar9, ar10);
