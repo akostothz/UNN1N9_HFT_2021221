@@ -28,6 +28,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{AB2ACD
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNN1N9_HFT_2021221.WpfClient", "UNN1N9_HFT_2021221.WpfClient\UNN1N9_HFT_2021221.WpfClient.csproj", "{A74213F3-C624-4F17-A93B-B40F74E35F84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{18350FA7-65B0-448A-8228-AAC6E352E2CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18350FA7-65B0-448A-8228-AAC6E352E2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18350FA7-65B0-448A-8228-AAC6E352E2CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74213F3-C624-4F17-A93B-B40F74E35F84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74213F3-C624-4F17-A93B-B40F74E35F84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74213F3-C624-4F17-A93B-B40F74E35F84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74213F3-C624-4F17-A93B-B40F74E35F84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 		{CA7367AE-BB8C-48C8-A3D3-A66F005AB0BD} = {40BDC614-A5A8-4F79-B4AC-82AC32749C22}
 		{B9DB45E5-F385-4430-8BBF-EC26E1EAD3C6} = {40BDC614-A5A8-4F79-B4AC-82AC32749C22}
 		{18350FA7-65B0-448A-8228-AAC6E352E2CA} = {40BDC614-A5A8-4F79-B4AC-82AC32749C22}
+		{A74213F3-C624-4F17-A93B-B40F74E35F84} = {F1747E7F-9C3B-411A-AB8A-9F928F96CA62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2413B5C7-9384-4038-AFD2-EFD217B7555D}
