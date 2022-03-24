@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UNN1N9_HFT_2021221.Data;
+using UNN1N9_HFT_2021221.Endpoint.Services;
 using UNN1N9_HFT_2021221.Logic;
 using UNN1N9_HFT_2021221.Repository;
 
@@ -33,6 +34,9 @@ namespace UNN1N9_HFT_2021221.Endpoint
 
             //data
             services.AddTransient<MusicDbContext, MusicDbContext>();
+
+            //signalR
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,7 @@ namespace UNN1N9_HFT_2021221.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

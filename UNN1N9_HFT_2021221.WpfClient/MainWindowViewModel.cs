@@ -31,17 +31,20 @@ namespace UNN1N9_HFT_2021221.WpfClient
             get { return selectedSong; }
             set 
             {
-                selectedSong = new Song()
+                if (value != null)
                 {
-                    SongName = value.SongName,
-                    SongID = value.SongID,
-                    Style = value.Style,
-                    Length = value.Length,
-                    IsExplicit = value.IsExplicit,
-                    IsLoveSong = value.IsLoveSong
-                };
-                OnPropertyChanged();
-                (DeleteSongCommand as RelayCommand).NotifyCanExecuteChanged();
+                    selectedSong = new Song()
+                    {
+                        SongName = value.SongName,
+                        SongID = value.SongID,
+                        Style = value.Style,
+                        Length = value.Length,
+                        IsExplicit = value.IsExplicit,
+                        IsLoveSong = value.IsLoveSong
+                    };
+                    OnPropertyChanged();
+                    (DeleteSongCommand as RelayCommand).NotifyCanExecuteChanged();
+                }               
             }
         }
 
@@ -51,21 +54,27 @@ namespace UNN1N9_HFT_2021221.WpfClient
         public ICommand UpdateSongCommand { get; set; }
         public MainWindowViewModel()
         {
+            
             if (!IsInDesignMode)
             {
-                Songs = new RestCollection<Song>("http://localhost:35739", "song");
+                Songs = new RestCollection<Song>("http://localhost:35739", "song", "hub");
 
                 CreateSongCommand = new RelayCommand(() =>
                 {
                     Songs.Add(new Song()
                     {
-                        SongName = "Softcore"
+                        SongName = SelectedSong.SongName,
+                        Style = SelectedSong.Style,
+                        Length = SelectedSong.Length,
+                        IsExplicit = SelectedSong.IsExplicit,
+                        IsLoveSong = SelectedSong.IsLoveSong
+
                     });
                 });
 
                 UpdateSongCommand = new RelayCommand(() =>
                 {
-
+                    Songs.Update(SelectedSong);
                 });
 
                 DeleteSongCommand = new RelayCommand(() =>
@@ -76,6 +85,8 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 {
                     return SelectedSong != null;
                 });
+
+                SelectedSong = new Song();
             }          
         }
     }
