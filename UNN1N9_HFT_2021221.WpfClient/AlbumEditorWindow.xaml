@@ -1,0 +1,29 @@
+﻿<Window x:Class="UNN1N9_HFT_2021221.WpfClient.AlbumEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
+        mc:Ignorable="d"
+        Title="AlbumEditorWindow" Height="450" Width="800" Background="Black">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Grid.Column="0" Background="Black" Foreground="NavajoWhite" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding SongName}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <StackPanel Grid.Column="1">
+            <Label Content="Name" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedSong.SongName}" Background="DarkGray" Padding="10" Margin="0,0,0,30"/>
+            <Button Content="Create Album" Command="{Binding CreateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
+            <Button Content="Delete Album" Command="{Binding DeleteSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
+            <Button Content="Update Album" Command="{Binding UpdateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
