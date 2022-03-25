@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="AlbumEditorWindow" Height="450" Width="800" Background="Black">
+        Title="Album Editor" Height="450" Width="800" Background="Black">
+    <Window.DataContext>
+        <local:AlbumEditorWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>

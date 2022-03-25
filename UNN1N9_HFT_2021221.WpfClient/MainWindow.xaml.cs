@@ -21,5 +21,11 @@ namespace UNN1N9_HFT_2021221.WpfClient
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //SongEditorWindow sew = new SongEditorWindow();
+
+        }
     }
 }
