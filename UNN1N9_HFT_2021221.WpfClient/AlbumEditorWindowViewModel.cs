@@ -49,9 +49,12 @@ namespace UNN1N9_HFT_2021221.WpfClient
         public ICommand CreateAlbumCommand { get; set; }
         public ICommand DeleteAlbumCommand { get; set; }
         public ICommand UpdateAlbumCommand { get; set; }
+
+        public ICommand BiggerThan8Command { get; set; }
+
         public AlbumEditorWindowViewModel()
         {
-
+            RestService rest = new RestService("http://localhost:35739");
             if (!IsInDesignMode)
             {
                 Albums = new RestCollection<Album>("http://localhost:35739/", "album", "hub");
@@ -77,6 +80,12 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 () =>
                 {
                     return SelectedAlbum != null;
+                });
+
+                
+                BiggerThan8Command = new RelayCommand(() =>
+                {
+                    var result = rest.Get<KeyValuePair<string, int>>("stat/numberofalbumswbiggerratingthan8bycountries");
                 });
 
                 SelectedAlbum = new Album();

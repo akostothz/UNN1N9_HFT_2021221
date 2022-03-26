@@ -14,14 +14,7 @@ namespace UNN1N9_HFT_2021221.WpfClient
 {
     public class SongEditorWindowViewModel : ObservableRecipient
     {
-        public static bool IsInDesignMode
-        {
-            get
-            {
-                var prop = DesignerProperties.IsInDesignModeProperty;
-                return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
-            }
-        }
+        
         public RestCollection<Song> Songs { get; set; }
 
         private Song selectedSong;
@@ -48,10 +41,19 @@ namespace UNN1N9_HFT_2021221.WpfClient
             }
         }
 
-
         public ICommand CreateSongCommand { get; set; }
         public ICommand DeleteSongCommand { get; set; }
         public ICommand UpdateSongCommand { get; set; }
+
+        public static bool IsInDesignMode
+        {
+            get
+            {
+                var prop = DesignerProperties.IsInDesignModeProperty;
+                return (bool)DependencyPropertyDescriptor.FromProperty(prop, typeof(FrameworkElement)).Metadata.DefaultValue;
+            }
+        }
+
         public SongEditorWindowViewModel()
         {
 
@@ -73,7 +75,7 @@ namespace UNN1N9_HFT_2021221.WpfClient
 
                 UpdateSongCommand = new RelayCommand(() =>
                 {
-                    Songs.Update(SelectedSong);
+                    Songs.Update(SelectedSong);                   
                 });
 
                 DeleteSongCommand = new RelayCommand(() =>

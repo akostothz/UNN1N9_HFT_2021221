@@ -11,18 +11,18 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UNN1N9_HFT_2021221.Models;
 
 namespace UNN1N9_HFT_2021221.WpfClient
 {
     /// <summary>
-    /// Interaction logic for AlbumEditorWindow.xaml
+    /// Interaction logic for NonCrudWindow.xaml
     /// </summary>
-    public partial class AlbumEditorWindow : Window
+    public partial class NonCrudWindow : Window
     {
-        public AlbumEditorWindow()
+        public NonCrudWindow()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -37,5 +37,10 @@ namespace UNN1N9_HFT_2021221.WpfClient
             SongEditorWindow sew = new SongEditorWindow();
             sew.Show();
         }
+        private void NonCrudButton_Click(object sender, RoutedEventArgs e)
+        {
+            NonCrudWindow ncw = new NonCrudWindow();
+            ncw.Show();
+        }
     }
 }

@@ -7,26 +7,26 @@
         mc:Ignorable="d"
         Title="Song Editor" Height="450" Width="800"  Background="Black">
     <Window.DataContext>
-        <local:SongEditorWindowViewModel/>
+        <local:SongEditorWindowViewModel />
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <ListBox Grid.Column="0" Background="Black" Foreground="NavajoWhite" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding SongName}" Foreground="NavajoWhite"/>
+                    <Label Content="{Binding SongName}" Foreground="NavajoWhite" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Column="1">
-            <Label Content="Name" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedSong.SongName}" Background="DarkGray" Padding="10" Margin="0,0,0,30"/>
-            <Button Content="Create Song" Command="{Binding CreateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
-            <Button Content="Delete Song" Command="{Binding DeleteSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
-            <Button Content="Update Song" Command="{Binding UpdateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
+            <Label Content="Name" Background="MediumPurple" Padding="10" />
+            <TextBox Text="{Binding SelectedSong.SongName}" Background="DarkGray" Padding="10" Margin="0,0,0,30" />
+            <Button Content="Create Song" Command="{Binding CreateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
+            <Button Content="Delete Song" Command="{Binding DeleteSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
+            <Button Content="Update Song" Command="{Binding UpdateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
         </StackPanel>
     </Grid>
 </Window>
