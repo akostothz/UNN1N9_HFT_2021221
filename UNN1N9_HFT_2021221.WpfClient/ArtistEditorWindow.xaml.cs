@@ -21,7 +21,7 @@ namespace UNN1N9_HFT_2021221.WpfClient
     {
         public ArtistEditorWindow()
         {
-            //InitializeComponent();
+            InitializeComponent();
         }
     }
 }

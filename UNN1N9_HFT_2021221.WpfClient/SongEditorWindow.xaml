@@ -17,7 +17,7 @@
         <ListBox Grid.Column="0" Background="Black" Foreground="NavajoWhite" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding SongName}"/>
+                    <Label Content="{Binding SongName}" Foreground="NavajoWhite"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

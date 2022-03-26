@@ -54,7 +54,7 @@ namespace UNN1N9_HFT_2021221.WpfClient
 
             if (!IsInDesignMode)
             {
-                Albums = new RestCollection<Album>("http://localhost:35739", "album", "hub");
+                Albums = new RestCollection<Album>("http://localhost:35739/", "album", "hub");
 
                 CreateAlbumCommand = new RelayCommand(() =>
                 {

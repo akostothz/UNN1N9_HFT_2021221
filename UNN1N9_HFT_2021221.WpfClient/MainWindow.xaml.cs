@@ -25,17 +25,17 @@ namespace UNN1N9_HFT_2021221.WpfClient
         private void ArtistButton_Click(object sender, RoutedEventArgs e)
         {
             ArtistEditorWindow arew = new ArtistEditorWindow();
-            //arew.Show();
+            arew.Show();
         }
         private void AlbumButton_Click(object sender, RoutedEventArgs e)
         {
             AlbumEditorWindow alew = new AlbumEditorWindow();
-            //alew.Show();
+            alew.Show();
         }
         private void SongButton_Click(object sender, RoutedEventArgs e)
         {
             SongEditorWindow sew = new SongEditorWindow();
-            //sew.Show();
+            sew.Show();
         }
     }
 }

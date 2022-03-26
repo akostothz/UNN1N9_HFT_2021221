@@ -57,7 +57,7 @@ namespace UNN1N9_HFT_2021221.WpfClient
 
             if (!IsInDesignMode)
             {
-                Songs = new RestCollection<Song>("http://localhost:35739", "song", "hub");
+                Songs = new RestCollection<Song>("http://localhost:35739/", "song", "hub");
 
                 CreateSongCommand = new RelayCommand(() =>
                 {
@@ -68,7 +68,6 @@ namespace UNN1N9_HFT_2021221.WpfClient
                         //Length = SelectedSong.Length,
                         //IsExplicit = SelectedSong.IsExplicit,
                         //IsLoveSong = SelectedSong.IsLoveSong
-
                     });
                 });
 
