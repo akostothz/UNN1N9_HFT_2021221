@@ -1,0 +1,86 @@
+﻿* {
+    color: dodgerblue;
+}
+
+body {
+    background-color: black;
+}
+
+h1 {
+    color: rebeccapurple;
+    text-align: center;
+    font-size: 40px;
+}
+table {
+    width = 100%;
+}
+
+table {    
+    align-content: center;
+    vertical-align: central;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid purple;
+    color: dodgerblue;
+    align-content: center;
+    text-align: center;
+}
+
+table button{
+    padding: 5px;
+    background-color: darkred;
+    color: yellow;
+}
+
+th, td {
+    padding: 5px;
+}
+
+th {
+    background-color: indigo; 
+    color: lightyellow;
+}
+
+
+#formdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+    #formdiv button {
+        width: 80px;
+        height: 30px;
+        align-content: center;
+        margin: auto;
+        padding: 10px;
+        color: black;
+        border-color: purple;
+        background-color: deeppink;
+        font-weight: bolder;
+        text-align: center;
+        vertical-align: central;
+        margin-bottom: 20px;
+    }
+
+#formdiv label, button, intput {
+    margin: 10px;
+    padding: 8px;
+}
+
+    #formdiv label {
+        font-weight: bolder;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+#formdiv input{
+    width: 300px;
+    align-self: center;
+    margin-bottom: 20px;
+    background-color: mediumvioletred;
+    color: black;
+}
