@@ -17,15 +17,15 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
             <Label Content="Artist Editor" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="Button_Click" />
+            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="ArtistButton_Click" />
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Label Content="Album Editor" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10"/>
+            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="AlbumButton_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
             <Label Content="Song Editor" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10"/>
+            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="SongButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

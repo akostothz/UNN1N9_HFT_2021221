@@ -22,10 +22,20 @@ namespace UNN1N9_HFT_2021221.WpfClient
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ArtistButton_Click(object sender, RoutedEventArgs e)
         {
-            //SongEditorWindow sew = new SongEditorWindow();
-
+            ArtistEditorWindow arew = new ArtistEditorWindow();
+            //arew.Show();
+        }
+        private void AlbumButton_Click(object sender, RoutedEventArgs e)
+        {
+            AlbumEditorWindow alew = new AlbumEditorWindow();
+            //alew.Show();
+        }
+        private void SongButton_Click(object sender, RoutedEventArgs e)
+        {
+            SongEditorWindow sew = new SongEditorWindow();
+            //sew.Show();
         }
     }
 }

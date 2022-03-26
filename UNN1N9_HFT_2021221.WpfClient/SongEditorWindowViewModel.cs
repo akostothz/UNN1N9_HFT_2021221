@@ -36,11 +36,11 @@ namespace UNN1N9_HFT_2021221.WpfClient
                     selectedSong = new Song()
                     {
                         SongName = value.SongName,
-                        SongID = value.SongID,
-                        Style = value.Style,
-                        Length = value.Length,
-                        IsExplicit = value.IsExplicit,
-                        IsLoveSong = value.IsLoveSong
+                        SongID = value.SongID/*,*/
+                        //Style = value.Style,
+                        //Length = value.Length,
+                        //IsExplicit = value.IsExplicit,
+                        //IsLoveSong = value.IsLoveSong
                     };
                     OnPropertyChanged();
                     (DeleteSongCommand as RelayCommand).NotifyCanExecuteChanged();
@@ -59,35 +59,35 @@ namespace UNN1N9_HFT_2021221.WpfClient
             {
                 Songs = new RestCollection<Song>("http://localhost:35739", "song", "hub");
 
-            CreateSongCommand = new RelayCommand(() =>
-            {
-                Songs.Add(new Song()
+                CreateSongCommand = new RelayCommand(() =>
                 {
-                    SongName = SelectedSong.SongName,
-                    Style = SelectedSong.Style,
-                    Length = SelectedSong.Length,
-                    IsExplicit = SelectedSong.IsExplicit,
-                    IsLoveSong = SelectedSong.IsLoveSong
+                    Songs.Add(new Song()
+                    {
+                        SongName = SelectedSong.SongName/*,*/
+                        //Style = SelectedSong.Style,
+                        //Length = SelectedSong.Length,
+                        //IsExplicit = SelectedSong.IsExplicit,
+                        //IsLoveSong = SelectedSong.IsLoveSong
 
+                    });
                 });
-            });
 
-            UpdateSongCommand = new RelayCommand(() =>
-            {
-                Songs.Update(SelectedSong);
-            });
+                UpdateSongCommand = new RelayCommand(() =>
+                {
+                    Songs.Update(SelectedSong);
+                });
 
-            DeleteSongCommand = new RelayCommand(() =>
-            {
-                Songs.Delete(SelectedSong.SongID);
-            },
-            () =>
-            {
-                return SelectedSong != null;
-            });
+                DeleteSongCommand = new RelayCommand(() =>
+                {
+                    Songs.Delete(SelectedSong.SongID);
+                },
+                () =>
+                {
+                    return SelectedSong != null;
+                });
 
-            SelectedSong = new Song();
-        }
+                SelectedSong = new Song();
+            }
         }
     }
 }
