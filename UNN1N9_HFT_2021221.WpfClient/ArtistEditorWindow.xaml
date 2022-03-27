@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="Artist Editor" Height="450" Width="800" Background="Black">
+        Title="Artist Editor" Height="650" Width="800" Background="Black">
     <Window.DataContext>
         <local:ArtistEditorWindowViewModel/>
     </Window.DataContext>
@@ -23,7 +23,11 @@
         </ListBox>
         <StackPanel Grid.Column="1">
             <Label Content="Name" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedArtist.ArtistName}" Background="DarkGray" Padding="10" Margin="0,0,0,30"/>
+            <TextBox Text="{Binding SelectedArtist.ArtistName}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Country of Origin" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedArtist.CountryOfOrigin}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Number of Albums" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedArtist.NumberOfAlbums}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
             <Button Content="Create Artist" Command="{Binding CreateArtistCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
             <Button Content="Delete Artist" Command="{Binding DeleteArtistCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
             <Button Content="Update Artist" Command="{Binding UpdateArtistCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>

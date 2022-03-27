@@ -38,7 +38,6 @@ async function getdata() {
         .then(x => x.json())
         .then(y => {
             songs = y;
-            //console.log(songs);
             display();
         });
 }
@@ -61,12 +60,18 @@ function display() {
 
 function create() {
     let name = document.getElementById('songname').value;
+    //let Style = document.getElementById('style').value;
+    //let Length = document.getElementById('length').value;
+    //let AlbumID = document.getElementById('albumid').value;
 
     fetch('http://localhost:35739/song', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { songName: name }),})
+            {
+                songName: name
+            }),
+    })
         .then(response => response)
         .then(data =>
         {

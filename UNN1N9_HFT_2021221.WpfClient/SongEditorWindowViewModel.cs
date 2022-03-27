@@ -29,11 +29,12 @@ namespace UNN1N9_HFT_2021221.WpfClient
                     selectedSong = new Song()
                     {
                         SongName = value.SongName,
-                        SongID = value.SongID/*,*/
-                        //Style = value.Style,
-                        //Length = value.Length,
-                        //IsExplicit = value.IsExplicit,
-                        //IsLoveSong = value.IsLoveSong
+                        SongID = value.SongID,
+                        AlbumID = value.AlbumID,
+                        Style = value.Style,
+                        Length = value.Length,
+                        IsExplicit = value.IsExplicit,
+                        IsLoveSong = value.IsLoveSong
                     };
                     OnPropertyChanged();
                     (DeleteSongCommand as RelayCommand).NotifyCanExecuteChanged();
@@ -60,16 +61,18 @@ namespace UNN1N9_HFT_2021221.WpfClient
             if (!IsInDesignMode)
             {
                 Songs = new RestCollection<Song>("http://localhost:35739/", "song", "hub");
+                
 
                 CreateSongCommand = new RelayCommand(() =>
                 {
                     Songs.Add(new Song()
                     {
-                        SongName = SelectedSong.SongName/*,*/
-                        //Style = SelectedSong.Style,
-                        //Length = SelectedSong.Length,
-                        //IsExplicit = SelectedSong.IsExplicit,
-                        //IsLoveSong = SelectedSong.IsLoveSong
+                        SongName = SelectedSong.SongName,
+                        AlbumID = SelectedSong.AlbumID,
+                        Style = SelectedSong.Style,
+                        Length = SelectedSong.Length,
+                        IsExplicit = SelectedSong.IsExplicit,
+                        IsLoveSong = SelectedSong.IsLoveSong
                     });
                 });
 

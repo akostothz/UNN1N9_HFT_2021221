@@ -59,7 +59,7 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
         {
             var artistToDelete = this.artistLogic.Read(id);
             artistLogic.Delete(id);
-            this.hub.Clients.All.SendAsync("SongDeleted", artistToDelete);
+            this.hub.Clients.All.SendAsync("ArtistDeleted", artistToDelete);
         }
     }
 }

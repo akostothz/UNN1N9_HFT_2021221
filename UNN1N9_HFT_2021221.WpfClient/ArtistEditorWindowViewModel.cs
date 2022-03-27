@@ -35,9 +35,10 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 {
                     selectedArtist = new Artist()
                     {
-                        //deep copy
                         ArtistName = value.ArtistName,
-                        ArtistID = value.ArtistID
+                        ArtistID = value.ArtistID,
+                        CountryOfOrigin = value.CountryOfOrigin,
+                        NumberOfAlbums = value.NumberOfAlbums
                     };
                     OnPropertyChanged();
                     (DeleteArtistCommand as RelayCommand).NotifyCanExecuteChanged();
@@ -60,8 +61,9 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 {
                     Artists.Add(new Artist()
                     {
-                        //deep copy
-                        ArtistName = SelectedArtist.ArtistName
+                        ArtistName = SelectedArtist.ArtistName,
+                        CountryOfOrigin = SelectedArtist.CountryOfOrigin,
+                        NumberOfAlbums = SelectedArtist.NumberOfAlbums
                     });
                 });
 

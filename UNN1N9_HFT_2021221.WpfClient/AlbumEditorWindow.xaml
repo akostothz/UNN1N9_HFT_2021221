@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="Album Editor" Height="450" Width="800" Background="Black">
+        Title="Album Editor" Height="650" Width="800" Background="Black">
     <Window.DataContext>
         <local:AlbumEditorWindowViewModel/>
     </Window.DataContext>
@@ -23,7 +23,15 @@
         </ListBox>
         <StackPanel Grid.Column="1">
             <Label Content="Name" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedAlbum.AlbumName}" Background="DarkGray" Padding="10" Margin="0,0,0,30"/>
+            <TextBox Text="{Binding SelectedAlbum.AlbumName}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="ArtistID" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedAlbum.ArtistID}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Style" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedAlbum.Style}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Rating" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedAlbum.Rating}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Year" Background="MediumPurple" Padding="10"/>
+            <TextBox Text="{Binding SelectedAlbum.Year}" Background="DarkGray" Padding="10" Margin="0,0,0,20"/>
             <Button Content="Create Album" Command="{Binding CreateAlbumCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
             <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
             <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />

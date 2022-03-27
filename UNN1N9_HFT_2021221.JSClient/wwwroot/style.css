@@ -67,8 +67,8 @@ th {
     }
 
 #formdiv label, button, intput {
-    margin: 10px;
-    padding: 8px;
+    margin: 2px;
+    padding: 4px;
 }
 
     #formdiv label {
@@ -80,7 +80,7 @@ th {
 #formdiv input{
     width: 300px;
     align-self: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: mediumvioletred;
-    color: black;
+    color: white;
 }

@@ -35,9 +35,12 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 {
                     selectedAlbum = new Album()
                     {
-                        //deep copy
                         AlbumName = value.AlbumName,
-                        AlbumID = value.AlbumID
+                        AlbumID = value.AlbumID,
+                        ArtistID = value.ArtistID,
+                        Style = value.Style,
+                        Rating = (double)value.Rating,
+                        Year = value.Year
                     };
                     OnPropertyChanged();
                     (DeleteAlbumCommand as RelayCommand).NotifyCanExecuteChanged();
@@ -50,11 +53,8 @@ namespace UNN1N9_HFT_2021221.WpfClient
         public ICommand DeleteAlbumCommand { get; set; }
         public ICommand UpdateAlbumCommand { get; set; }
 
-        public ICommand BiggerThan8Command { get; set; }
-
         public AlbumEditorWindowViewModel()
         {
-            RestService rest = new RestService("http://localhost:35739");
             if (!IsInDesignMode)
             {
                 Albums = new RestCollection<Album>("http://localhost:35739/", "album", "hub");
@@ -63,8 +63,11 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 {
                     Albums.Add(new Album()
                     {
-                        //deep copy
-                        AlbumName = SelectedAlbum.AlbumName
+                        AlbumName = SelectedAlbum.AlbumName,
+                        ArtistID = SelectedAlbum.ArtistID,
+                        Style = SelectedAlbum.Style,
+                        Rating = SelectedAlbum.Rating,
+                        Year = SelectedAlbum.Year
                     });
                 });
 
@@ -80,12 +83,6 @@ namespace UNN1N9_HFT_2021221.WpfClient
                 () =>
                 {
                     return SelectedAlbum != null;
-                });
-
-                
-                BiggerThan8Command = new RelayCommand(() =>
-                {
-                    var result = rest.Get<KeyValuePair<string, int>>("stat/numberofalbumswbiggerratingthan8bycountries");
                 });
 
                 SelectedAlbum = new Album();
