@@ -58,6 +58,17 @@ function display() {
     });
 }
 
+function getCheckedRadioValue(radioGroupName) {
+    var rads = document.getElementsByName(radioGroupName),
+        i;
+    for (i = 0; i < rads.length; i++)
+        if (rads[i].checked)
+            return rads[i].value;
+    return null;
+}
+
+//var checkedValue = getCheckedRadioValue("type");
+
 function create() {
     let name = document.getElementById('songname').value;
     console.log(name);
@@ -67,6 +78,10 @@ function create() {
     console.log(Length);
     let AlbumID = document.getElementById('albumid').value;
     console.log(AlbumID);
+    //let exp = document.getElementById('explicit').value;
+    //console.log(exp);
+    //let love = document.getElementById('lovesong').value;
+    //console.log(love);
 
     fetch('http://localhost:35739/song', {
         method: 'POST',
@@ -77,6 +92,8 @@ function create() {
                 length: Length,
                 style: Style,
                 albumID: AlbumID
+                //isExplicit: exp,
+                //isLoveSong: love
             }),
     })
         .then(response => response)

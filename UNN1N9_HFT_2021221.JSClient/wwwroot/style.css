@@ -66,7 +66,7 @@ th {
         margin-bottom: 20px;
     }
 
-#formdiv label, button, intput {
+#formdiv label, button, input {
     margin: 2px;
     padding: 4px;
 }
@@ -81,6 +81,10 @@ th {
     width: 300px;
     align-self: center;
     margin-bottom: 10px;
-    background-color: darkseagreen;
+    background-color: yellowgreen;
     color: black;
+}
+
+li {
+    display: inline
 }
