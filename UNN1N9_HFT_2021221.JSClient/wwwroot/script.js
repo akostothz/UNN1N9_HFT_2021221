@@ -60,16 +60,23 @@ function display() {
 
 function create() {
     let name = document.getElementById('songname').value;
-    //let Style = document.getElementById('style').value;
-    //let Length = document.getElementById('length').value;
-    //let AlbumID = document.getElementById('albumid').value;
+    console.log(name);
+    let Style = document.getElementById('style').value;
+    console.log(Style);
+    let Length = document.getElementById('length').value;
+    console.log(Length);
+    let AlbumID = document.getElementById('albumid').value;
+    console.log(AlbumID);
 
     fetch('http://localhost:35739/song', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
             {
-                songName: name
+                songName: name,
+                length: Length,
+                style: Style,
+                albumID: AlbumID
             }),
     })
         .then(response => response)
