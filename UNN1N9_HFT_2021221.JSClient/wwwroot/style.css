@@ -1,5 +1,5 @@
 ﻿* {
-    color: dodgerblue;
+    color: royalblue;
 }
 
 body {
@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    color: rebeccapurple;
+    color: lightskyblue;
     text-align: center;
     font-size: 40px;
 }
@@ -24,16 +24,16 @@ table {
 }
 
 table, th, td {
-    border: 1px solid purple;
-    color: dodgerblue;
+    border: 1px solid blue;
+    color: lightblue;
     align-content: center;
     text-align: center;
 }
 
 table button{
     padding: 5px;
-    background-color: darkred;
-    color: yellow;
+    background-color: mediumblue;
+    color: coral;
 }
 
 th, td {
@@ -41,8 +41,8 @@ th, td {
 }
 
 th {
-    background-color: indigo; 
-    color: lightyellow;
+    background-color: navy; 
+    color:  aliceblue;
 }
 
 
@@ -57,15 +57,19 @@ th {
         align-content: center;
         margin: auto;
         padding: 10px;
-        color: black;
-        border-color: purple;
-        background-color: deeppink;
+        color: lightblue;
+        border-color: lightblue;
+        background-color: mediumblue;
         font-weight: bolder;
         text-align: center;
         vertical-align: central;
         margin-bottom: 20px;
+        margin-top: 15px;
     }
 
+#lbl {
+        color: aliceblue;
+    }
 #formdiv label, button, input {
     margin: 2px;
     padding: 4px;
@@ -77,14 +81,15 @@ th {
         margin-bottom: 5px;
     }
 
-#formdiv input{
+#formdiv input {
     width: 300px;
     align-self: center;
     margin-bottom: 10px;
-    background-color: yellowgreen;
+    background-color: lightblue;
     color: black;
 }
 
 li {
-    display: inline
+    width: 20px;
+    align-content: center;
 }

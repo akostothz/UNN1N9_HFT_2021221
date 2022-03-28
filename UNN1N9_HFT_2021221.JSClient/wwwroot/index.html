@@ -9,7 +9,7 @@
     <h1>Song Catalog</h1>
 
     <div id="formdiv">
-        <label>[ADD A NEW SONG]</label>
+        <label id="lbl">[ADD A NEW SONG]</label>
         <label>The name of your new song:</label>
         <input type="text" id="songname" />
         <label>AlbumID of your new song:</label>
@@ -19,13 +19,11 @@
         <label>The length of your new song:</label>
         <input type="number" id="length" />
         <label>Is it explicit?</label>
-        <ul>
-            <li>
-                <input type="radio" name="explicit" value="true" checked="checked" /> Yes
-                <input type="radio" name="explicit" value="false" /> No
-            </li>
-        </ul>
-       
+        <input type="checkbox" class="explicit" checked="checked" />
+        <label>Is it a love song?</label>
+        <input type="checkbox" class="lovesong" checked="checked" />
+
+
 
         <button type="button" onclick="create()">SUBMIT</button>
     </div>
