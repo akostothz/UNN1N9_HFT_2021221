@@ -12,11 +12,13 @@ using UNN1N9_HFT_2021221.Models;
 
 namespace UNN1N9_HFT_2021221.WpfClient
 {
-    public class NonCrudWindowViewModel
+    public class NonCrudWindowViewModel : ObservableRecipient
     {
         public RestCollection<Song> Songs { get; set; }
 
         public RestCollection<Album> Albums { get; set; }
+
+        public RestCollection<Artist> Artists { get; set; }
 
         public static bool IsInDesignMode
         {
@@ -29,10 +31,15 @@ namespace UNN1N9_HFT_2021221.WpfClient
 
         public NonCrudWindowViewModel()
         {
+            
             if (!IsInDesignMode)
             {
                 Albums = new RestCollection<Album>("http://localhost:35739/", "album", "hub");
                 Songs = new RestCollection<Song>("http://localhost:35739/", "song", "hub");
+                Artists = new RestCollection<Artist>("http://localhost:35739/", "artist", "hub");
+                RestService rest = new RestService("http://localhost:35739");
+                var result = rest.Get<KeyValuePair<string, int>>("stat/numberofalbumswbiggerratingthan8bycountries");
+                ;
             }
         }
     }

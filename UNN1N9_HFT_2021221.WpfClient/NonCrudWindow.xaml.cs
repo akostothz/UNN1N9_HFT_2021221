@@ -23,6 +23,14 @@ namespace UNN1N9_HFT_2021221.WpfClient
         public NonCrudWindow()
         {
             InitializeComponent();
+            RestService rest = new RestService("http://localhost:35739/");
+            var result = rest.Get<KeyValuePair<string, int>>("stat/numberofalbumswbiggerratingthan8bycountries");
+            List<string> greaterthan8 = new List<string>();
+            foreach (var item in result)
+            {
+                greaterthan8.Add(item.Key + ": " + item.Value);
+            }
+
         }
     }
 }
