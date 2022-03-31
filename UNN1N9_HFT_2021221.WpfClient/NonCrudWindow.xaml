@@ -6,9 +6,6 @@
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
         Title="NON-CRUD RESULTS" Height="450" Width="1200" Background="Black">
-    <!--<Window.DataContext>
-        <local:NonCrudWindowViewModel/>
-    </Window.DataContext>-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -23,46 +20,24 @@
         </Grid.RowDefinitions>
 
         <Label Content="Albums with bigger rating&#x0a; than 8 by countries" Grid.Column="0" Grid.Row="0" Foreground="Black" Background="CornflowerBlue" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <ListBox Grid.Column="0" Grid.Row="1" Background="Black" Foreground="CornflowerBlue" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Label Foreground="CornflowerBlue"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListBox x:Name="lbox1" Grid.Column="0" Grid.Row="1" Background="Black" Foreground="CornflowerBlue" />
+
+
 
         <Label Content="Average Length by Albums" Grid.Column="1" Grid.Row="0" Foreground="Black" Background="DarkSeaGreen" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <!--<ListBox Grid.Column="1"  Grid.Row="1" Background="Black" Foreground="DarkSeaGreen" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Label Foreground="DarkSeaGreen"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
+        <ListBox x:Name="lbox2" Grid.Column="1"  Grid.Row="1" Background="Black" Foreground="DarkSeaGreen" />
+
 
         <Label Content="Number of Explicit&#x0a; Songs by Artists" Grid.Column="2" Foreground="Black" Background="MediumVioletRed" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <!--<ListBox Grid.Column="2"  Grid.Row="1" Background="Black" Foreground="MediumVioletRed" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Label Foreground="MediumVioletRed"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
+        <ListBox x:Name="lbox3" Grid.Column="2"  Grid.Row="1" Background="Black" Foreground="MediumVioletRed" />
+
 
         <Label Content="Length of All Songs&#x0a; by Countries" Grid.Column="3" Grid.Row="0" Foreground="Black" Background="DarkOrange" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <!--<ListBox Grid.Column="3" Grid.Row="1" Background="Black" Foreground="DarkOrange">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
+        <ListBox x:Name="lbox4" Grid.Column="3" Grid.Row="1" Background="Black" Foreground="DarkOrange"/>
+
 
         <Label Content="Number of Love Songs After&#x0a; 2015 by Artists" Grid.Column="4" Grid.Row="0" Foreground="Black" Background="Purple" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Width="220" Height="80" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <!--<ListBox Grid.Column="4" Grid.Row="1" Background="Black" Foreground="Purple" >
-            <ListBox.ItemTemplate>
-              <DataTemplate>
-             </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
+        <ListBox x:Name="lbox5" Grid.Column="4" Grid.Row="1" Background="Black" Foreground="Purple" />
+
     </Grid>
 </Window>
