@@ -5,42 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="Song Editor" Height="650" Width="800"  Background="Black">
+        Title="Song Editor" Height="600" Width="1000"  Background="Black">
     <Window.DataContext>
         <local:SongEditorWindowViewModel />
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" Background="Black" Foreground="NavajoWhite" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Strawberry Music Datebase Editor" FontSize="30" FontFamily="Garamond" Foreground="AliceBlue" Background="#b50138" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="[SONG EDITOR]" FontSize="20" FontFamily="Garamond" Foreground="AliceBlue" Background="#b50138" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <ListBox Grid.Column="0" Grid.Row="2" Background="Black" Foreground="AliceBlue" ItemsSource="{Binding Songs}" SelectedItem="{Binding SelectedSong}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding SongName}" Foreground="NavajoWhite" />
+                    <Label Content="{Binding SongName}" Foreground="AliceBlue" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="1">
-            <Label Content="Name" Background="MediumPurple" Padding="10" />
-            <TextBox Text="{Binding SelectedSong.SongName}" Background="DarkGray" Padding="10" Margin="0,0,0,0" />
-            <Label Content="Album ID" Background="MediumPurple" Padding="10" />
-            <TextBox Text="{Binding SelectedSong.AlbumID}" Background="DarkGray" Padding="10" Margin="0,0,0,0"  />
-            <Label Content="Length" Background="MediumPurple" Padding="10" />
-            <TextBox Text="{Binding SelectedSong.Length}" Background="DarkGray" Padding="10" Margin="0,0,0,0"  />
-            <Label Content="Style" Background="MediumPurple" Padding="10" />
-            <TextBox Text="{Binding SelectedSong.Style}" Background="DarkGray" Padding="10" Margin="0,0,0,10"  />
+        
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <Label Content="Name" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedSong.SongName}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0" />
+            <Label Content="Album ID" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedSong.AlbumID}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"  />
+            <Label Content="Length" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedSong.Length}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"  />
+            <Label Content="Style" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedSong.Style}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,10"  />
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Is it Explicit?" Width="120" Background="MediumPurple" Padding="10" />
-                <RadioButton x:Name="rb_isexplicit" Margin="10" Foreground="BlueViolet" IsChecked="{Binding SelectedSong.IsExplicit}" />
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Is it Explicit?" Width="120" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <RadioButton x:Name="rb_isexplicit" Margin="10" Foreground="AliceBlue" IsChecked="{Binding SelectedSong.IsExplicit}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Content="Is it a love song?" Width="120" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <RadioButton x:Name="rb_islovesong" Margin="10" Foreground="#b50138" IsChecked="{Binding SelectedSong.IsLoveSong}"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Is it a love song?" Width="120" Background="MediumPurple" Padding="10" />
-                <RadioButton x:Name="rb_islovesong" Margin="10" Foreground="BlueViolet" IsChecked="{Binding SelectedSong.IsLoveSong}"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Content="Create Song" Command="{Binding CreateSongCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+                <Button Content="Delete Song" Command="{Binding DeleteSongCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+                <Button Content="Update Song" Command="{Binding UpdateSongCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
             </StackPanel>
-            <Button Content="Create Song" Command="{Binding CreateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
-            <Button Content="Delete Song" Command="{Binding DeleteSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
-            <Button Content="Update Song" Command="{Binding UpdateSongCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
         </StackPanel>
     </Grid>
 </Window>

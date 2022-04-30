@@ -5,32 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="Database Editor" Height="200" Width="800" Background="Black">
+        Title="Strawberry Music Editor" Height="250" Width="800" Background="Black">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Grid.Column="0">
-            <Label Content="Artist Editor" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="ArtistButton_Click" />
+        <Label Grid.Row="0" Background="#b50138" Grid.Column="0" Grid.ColumnSpan="4" Content="Strawberry Music Datebase Editor" Foreground="AliceBlue" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" FontFamily="Garamond"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <Label Content="Artist Editor" Background="#b50138" Foreground="AliceBlue" Padding="10" HorizontalContentAlignment="Center"/>
+            <Button Content="GO!"  Foreground="AliceBlue" Background="#4e6f8c" BorderThickness="2" Margin="40" Padding="10" Click="ArtistButton_Click" />
         </StackPanel>
-        <StackPanel Grid.Column="1">
-            <Label Content="Album Editor" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="AlbumButton_Click"/>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Label Content="Album Editor" Background="#b50138" Foreground="AliceBlue" Padding="10" HorizontalContentAlignment="Center"/>
+            <Button Content="GO!"   Foreground="AliceBlue" Background="#4e6f8c" BorderThickness="2" Margin="40" Padding="10" Click="AlbumButton_Click"/>
         </StackPanel>
-        <StackPanel Grid.Column="2">
-            <Label Content="Song Editor" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="SongButton_Click"/>
+        <StackPanel Grid.Column="2" Grid.Row="1">
+            <Label Content="Song Editor" Background="#b50138" Foreground="AliceBlue" Padding="10"  HorizontalContentAlignment="Center"/>
+            <Button Content="GO!"   Foreground="AliceBlue" Background="#4e6f8c" BorderThickness="2" Margin="40" Padding="10" Click="SongButton_Click"/>
         </StackPanel>
-        <StackPanel Grid.Column="3">
-            <Label Content="NON-CRUD Results" Background="MediumPurple" Padding="10" Margin="2"/>
-            <Button Content="Take me there!"  Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="40" Padding="10" Click="NonCrudButton_Click" />
+        <StackPanel Grid.Column="3" Grid.Row="1">
+            <Label Content="Statistics" Background="#b50138" Foreground="AliceBlue" Padding="10" HorizontalContentAlignment="Center"/>
+            <Button Content="GO!" Foreground="AliceBlue" Background="#4e6f8c" BorderThickness="2" Margin="40" Padding="10" Click="NonCrudButton_Click" />
         </StackPanel>
     </Grid>
 </Window>

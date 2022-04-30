@@ -5,32 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="Artist Editor" Height="650" Width="800" Background="Black">
+        Title="Artist Editor" Height="600" Width="1000" Background="Black">
     <Window.DataContext>
         <local:ArtistEditorWindowViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" Background="Black" Foreground="NavajoWhite" ItemsSource="{Binding Artists}" SelectedItem="{Binding SelectedArtist}">
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Strawberry Music Datebase Editor" FontSize="30" FontFamily="Garamond" Foreground="AliceBlue" Background="#b50138" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="[ARTIST EDITOR]" FontSize="20" FontFamily="Garamond" Foreground="AliceBlue" Background="#b50138" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <ListBox Grid.Column="0" Grid.Row="2" Background="Black" Foreground="AliceBlue" ItemsSource="{Binding Artists}" SelectedItem="{Binding SelectedArtist}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding ArtistName}" Foreground="NavajoWhite"/>
+                    <Label Content="{Binding ArtistName}" Foreground="AliceBlue"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="1">
-            <Label Content="Name" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedArtist.ArtistName}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Label Content="Country of Origin" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedArtist.CountryOfOrigin}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Label Content="Number of Albums" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedArtist.NumberOfAlbums}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Button Content="Create Artist" Command="{Binding CreateArtistCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
-            <Button Content="Delete Artist" Command="{Binding DeleteArtistCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
-            <Button Content="Update Artist" Command="{Binding UpdateArtistCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10"/>
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <Label Content="Name" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedArtist.ArtistName}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Country of Origin" Background="#b50138" Padding="10" Foreground="AliceBlue"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedArtist.CountryOfOrigin}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Number of Albums" Background="#b50138" Padding="10" Foreground="AliceBlue"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedArtist.NumberOfAlbums}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,30"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Create Artist" Command="{Binding CreateArtistCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+            <Button Content="Delete Artist" Command="{Binding DeleteArtistCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+            <Button Content="Update Artist" Command="{Binding UpdateArtistCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

@@ -5,36 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UNN1N9_HFT_2021221.WpfClient"
         mc:Ignorable="d"
-        Title="Album Editor" Height="650" Width="800" Background="Black">
+        Title="Album Editor" Height="600" Width="1000" Background="Black">
     <Window.DataContext>
         <local:AlbumEditorWindowViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <ListBox Grid.Column="0" Background="Black" Foreground="NavajoWhite" ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}">
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Strawberry Music Datebase Editor" FontSize="30" FontFamily="Garamond" Foreground="AliceBlue" Background="#b50138" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="[ALBUM EDITOR]" FontSize="20" FontFamily="Garamond" Foreground="AliceBlue" Background="#b50138" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <ListBox Grid.Column="0" Grid.Row="2" Background="Black" Foreground="AliceBlue" ItemsSource="{Binding Albums}" SelectedItem="{Binding SelectedAlbum}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding AlbumName}" Foreground="NavajoWhite"/>
+                    <Label Content="{Binding AlbumName}" Foreground="AliceBlue"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StackPanel Grid.Column="1">
-            <Label Content="Name" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedAlbum.AlbumName}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Label Content="ArtistID" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedAlbum.ArtistID}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Label Content="Style" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedAlbum.Style}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Label Content="Rating" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedAlbum.Rating}" Background="DarkGray" Padding="10" Margin="0,0,0,0"/>
-            <Label Content="Year" Background="MediumPurple" Padding="10"/>
-            <TextBox Text="{Binding SelectedAlbum.Year}" Background="DarkGray" Padding="10" Margin="0,0,0,20"/>
-            <Button Content="Create Album" Command="{Binding CreateAlbumCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
-            <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
-            <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}" Foreground="PapayaWhip" Background="DarkSlateBlue" Margin="20" Padding="10" />
+        
+        <StackPanel Grid.Column="1" Grid.Row="2">
+            <Label Content="Name" Background="#b50138" Foreground="AliceBlue" Padding="10" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedAlbum.AlbumName}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="ArtistID" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedAlbum.ArtistID}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Style" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedAlbum.Style}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Rating" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedAlbum.Rating}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,0"/>
+            <Label Content="Year" Background="#b50138" Padding="10" Foreground="AliceBlue" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Text="{Binding SelectedAlbum.Year}" Background="Black" Foreground="AliceBlue" Padding="10" Margin="0,0,0,20"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Create Album" Command="{Binding CreateAlbumCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+                <Button Content="Delete Album" Command="{Binding DeleteAlbumCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+                <Button Content="Update Album" Command="{Binding UpdateAlbumCommand}" Foreground="AliceBlue" Background="#4e6f8c" Margin="10" Padding="10" Width="100"/>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Window>
