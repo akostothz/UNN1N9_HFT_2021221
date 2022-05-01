@@ -21,9 +21,6 @@ namespace UNN1N9_HFT_2021221.WpfClient
             }
         }
         RestService rest;
-        public RestCollection<Album> Albums { get; set; }
-        public RestCollection<Artist> Artists { get; set; }
-        public RestCollection<Song> Songs { get; set; }
 
         public List<KeyValuePair<string, double>> AVGLengthByAlbum
         {
@@ -71,9 +68,6 @@ namespace UNN1N9_HFT_2021221.WpfClient
             if (!IsInDesignMode)
             {
                 rest = new RestService("http://localhost:35739/");
-                Albums = new RestCollection<Album>("http://localhost:35739/", "album", "hub");
-                Artists = new RestCollection<Artist>("http://localhost:35739/", "artist", "hub");
-                Songs = new RestCollection<Song>("http://localhost:35739/", "song", "hub");
             }
         }
     }

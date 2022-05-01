@@ -11,46 +11,6 @@
         <h1>Strawberry Music Database Editor</h1>
     </div>
 
-    <div id="statistics">
-        <h2>[STATISTICS]</h2>
-        <label>Love songs from the USA:</label>
-        <table>
-            <thead>
-                <tr>
-                    <th>Song ID</th>
-                    <th>Song name</th>
-                    <th>Style</th>
-                </tr>
-            </thead>
-            <tbody id="resultarea2">
-            </tbody>
-        </table>
-        <label>Explicit songs after 2010:</label>
-        <table>
-            <thead>
-                <tr>
-                    <th>Song ID</th>
-                    <th>Song name</th>
-                    <th>Style</th>
-                </tr>
-            </thead>
-            <tbody id="resultarea3">
-            </tbody>
-        </table>
-        <label>Alternative love songs with bigger album rating than 7:</label>
-        <table>
-            <thead>
-                <tr>
-                    <th>Song ID</th>
-                    <th>Song name</th>
-                    <th>Style</th>
-                </tr>
-            </thead>
-            <tbody id="resultarea4">
-            </tbody>
-        </table>
-    </div>
-
     <div id="updateformdiv">
         <label id="lbl2">[UPDATE A SONG]</label>
         <label>The name of your updated song:</label>
@@ -67,7 +27,6 @@
         <input type="checkbox" class="lovesongtoupdate" checked="checked" />
         <button type="button" onclick="update()">SUBMIT</button>
     </div>
-
     <table>
         <thead>
             <tr>
@@ -85,7 +44,6 @@
         </tbody>
     </table>
 
-    &nbsp;
 
     <div id="formdiv">
         <label id="lbl">[ADD A NEW SONG]</label>
@@ -102,6 +60,58 @@
         <label>Is it a love song?</label>
         <input type="checkbox" class="lovesong" checked="checked" />
         <button type="button" onclick="create()">SUBMIT</button>
+    </div>
+
+    <div id="statistics">
+        <h2>[STATISTICS]</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>[NON-CRUD]</th>
+                    <th>Love songs from the USA</th>
+                    <th>3 tables used</th>
+                </tr>
+                <tr>
+                    <th>Song ID</th>
+                    <th>Song name</th>
+                    <th>Style</th>
+                </tr>
+            </thead>
+            <tbody id="resultarea2">
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>[NON-CRUD]</th>
+                    <th>Explicit songs after 2010</th>
+                    <th>2 tables used</th>
+                </tr>
+                <tr>
+                    <th>Song ID</th>
+                    <th>Song name</th>
+                    <th>Style</th>
+                </tr>
+            </thead>
+            <tbody id="resultarea3">
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th>[NON-CRUD]</th>
+                    <th>Alternative love songs with bigger album rating than 7</th>
+                    <th>2 tables used</th>
+                </tr>
+                <tr>
+                    <th>Song ID</th>
+                    <th>Song name</th>
+                    <th>Style</th>
+                </tr>
+            </thead>
+            <tbody id="resultarea4">
+            </tbody>
+        </table>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>

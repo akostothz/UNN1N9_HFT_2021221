@@ -64,6 +64,15 @@ li {
     align-content: center;
 }
 
+#space {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+    align-self: center;
+    vertical-align: central;
+    font-weight: bold;
+}
+
 /*logo div*/
 
 #logo {
@@ -72,6 +81,7 @@ li {
     align-content: center;
     vertical-align: central;
     width: 100%;
+    padding-top: 0px;
 }
 
 #logo h1 {
@@ -169,7 +179,7 @@ li {
 
 #statistics {
     text-align: center;
-    padding-top: 15px;
+    padding-top: 0px;
     padding-bottom: 15px;
 }
 
@@ -186,3 +196,6 @@ li {
         padding-top: 600px;
         padding-bottom: 600px;
     }
+#statistics table {
+    padding-top: 150px;
+}
