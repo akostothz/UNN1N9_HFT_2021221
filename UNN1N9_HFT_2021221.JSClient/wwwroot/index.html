@@ -6,27 +6,10 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Song Catalog</h1>
-
-    <div id="formdiv">
-        <label id="lbl">[ADD A NEW SONG]</label>
-        <label>The name of your new song:</label>
-        <input type="text" id="songname" />
-        <label>AlbumID of your new song:</label>
-        <input type="number" id="albumid" />
-        <label>The style of your new song:</label>
-        <input type="text" id="style" />
-        <label>The length of your new song:</label>
-        <input type="number" id="length" />
-        <label>Is it explicit?</label>
-        <input type="checkbox" class="explicit" checked="checked" />
-        <label>Is it a love song?</label>
-        <input type="checkbox" class="lovesong" checked="checked" />
-
-
-
-        <button type="button" onclick="create()">SUBMIT</button>
+    <div id="logo">
+        <h1>Strawberry Music Database Editor</h1>
     </div>
+    &nbsp;
     <table>
         <thead>
             <tr>
@@ -43,6 +26,40 @@
         <tbody id="resultarea">
         </tbody>
     </table>
+    &nbsp;
+    <div id="formdiv">
+        <label id="lbl">[ADD A NEW SONG]</label>
+        <label>The name of your new song:</label>
+        <input type="text" id="songname" />
+        <label>AlbumID of your new song:</label>
+        <input type="number" id="albumid" />
+        <label>The style of your new song:</label>
+        <input type="text" id="style" />
+        <label>The length of your new song:</label>
+        <input type="number" id="length" />
+        <label>Is it explicit?</label>
+        <input type="checkbox" class="explicit" checked="checked" />
+        <label>Is it a love song?</label>
+        <input type="checkbox" class="lovesong" checked="checked" />
+        <button type="button" onclick="create()">SUBMIT</button>
+    </div>
+
+    <div id="updateformdiv">
+        <label id="lbl">[UPDATE A SONG]</label>
+        <label>The name of your updated song:</label>
+        <input type="text" id="songnametoupdate" />
+        <label>AlbumID of your updated song:</label>
+        <input type="number" id="albumidtoupdate" />
+        <label>The style of your updated song:</label>
+        <input type="text" id="styletoupdate" />
+        <label>The length of your updated song:</label>
+        <input type="number" id="lengthtoupdate" />
+        <label>Is it explicit?</label>
+        <input type="checkbox" class="explicittoupdate" checked="checked" />
+        <label>Is it a love song?</label>
+        <input type="checkbox" class="lovesongtoupdate" checked="checked" />
+        <button type="button" onclick="update()">SUBMIT</button>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
     <script src="script.js"></script>

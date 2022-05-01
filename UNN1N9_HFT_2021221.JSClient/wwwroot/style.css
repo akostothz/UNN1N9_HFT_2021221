@@ -1,18 +1,23 @@
 ﻿* {
-    color: royalblue;
+    color: aliceblue;
 }
+
+#logo {
+    background-color: #b50138;
+    height: 50px;
+    align-content: center;
+    vertical-align: central;
+    width: 100%;
+}
+    #logo h1 {
+        color: aliceblue;
+        text-align: center;
+        font-size: 40px;
+        align-content: center;
+    }
 
 body {
     background-color: black;
-}
-
-h1 {
-    color: lightskyblue;
-    text-align: center;
-    font-size: 40px;
-}
-table {
-    width = 100%;
 }
 
 table {    
@@ -24,25 +29,26 @@ table {
 }
 
 table, th, td {
-    border: 1px solid blue;
-    color: lightblue;
+    border: 1px solid #93012e;
+    color: aliceblue;
     align-content: center;
     text-align: center;
 }
 
-table button{
-    padding: 5px;
-    background-color: mediumblue;
-    color: coral;
-}
+    table button {
+        padding: 5px;
+        background-color: #4e6f8c;
+        color: aliceblue;
+        border-color: #364c60;
+    }
 
 th, td {
     padding: 5px;
 }
 
 th {
-    background-color: navy; 
-    color:  aliceblue;
+    background-color: #a40133;
+    color: aliceblue;
 }
 
 
@@ -92,4 +98,40 @@ th {
 li {
     width: 20px;
     align-content: center;
+}
+#updateformdiv {
+    display: none;
+    flex-direction: column;
+}
+
+    #updateformdiv button {
+        width: 80px;
+        height: 30px;
+        align-content: center;
+        margin: auto;
+        padding: 10px;
+        color: lightblue;
+        border-color: lightblue;
+        background-color: mediumblue;
+        font-weight: bolder;
+        text-align: center;
+        vertical-align: central;
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+    #updateformdiv label, button, input {
+        margin: 2px;
+        padding: 4px;
+    }
+    #updateformdiv input {
+        width: 300px;
+        align-self: center;
+        margin-bottom: 10px;
+        background-color: lightblue;
+        color: black;
+    }
+#updateformdiv label {
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 5px;
 }

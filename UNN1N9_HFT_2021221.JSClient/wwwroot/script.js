@@ -17,6 +17,10 @@ function setupSignalR() {
         getdata();
     });
 
+    connection.on("SongUpdated", (user, message) => {
+        getdata();
+    });
+
     connection.onclose(async () => {
         await start();
     });
@@ -53,7 +57,8 @@ function display() {
             t.length + "</td><td>" +
             t.isExplicit + "</td><td>" +
             t.isLoveSong + "</td><td>" +
-            `<button type="button" onclick="remove(${t.songID})">Delete</button>` +
+        `<button type="button" onclick="remove(${t.songID})">Delete</button>` +
+        `<button type="button" onclick="showupdate(${t.songID})">Delete</button>` +
             "</td ></tr > ";
     });
 }
