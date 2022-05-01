@@ -25,58 +25,43 @@ namespace UNN1N9_HFT_2021221.WpfClient
         public RestCollection<Artist> Artists { get; set; }
         public RestCollection<Song> Songs { get; set; }
 
-        public List<string> AVGLengthByAlbum
+        public List<KeyValuePair<string, double>> AVGLengthByAlbum
         {
             get
             {
-                var res = rest.Get<KeyValuePair<string, double>>("stat/avglengthbyalbums");
-                List<string> w = new List<string>();
-                res.ForEach(x => w.Add($"{x.Key}:  {Math.Round(x.Value)}"));
-                return w;
+                return rest.Get<KeyValuePair<string, double>>("stat/avglengthbyalbums");
             }
             private set { OnPropertyChanged(); }
         }
-        public List<string> GreaterThan8Albums
+        public List<KeyValuePair<string, int>> GreaterThan8Albums
         {
             get
             {
-                var res = rest.Get<KeyValuePair<string, int>>("stat/numberofalbumswbiggerratingthan8bycountries");
-                List<string> w = new List<string>();
-                res.ForEach(x => w.Add($"{x.Key}:  {x.Value}"));
-                return w;
+                return rest.Get<KeyValuePair<string, int>>("stat/numberofalbumswbiggerratingthan8bycountries");
             }
             private set { OnPropertyChanged(); }
         }
-        public List<string> ExplicitSongsByArtist
+        public List<KeyValuePair<string, int>> ExplicitSongsByArtist
         {
             get
             {
-                var res = rest.Get<KeyValuePair<string, int>>("stat/numberofexplicitsongsbyartists");
-                List<string> w = new List<string>();
-                res.ForEach(x => w.Add($"{x.Key}:  {x.Value}"));
-                return w;
+                return rest.Get<KeyValuePair<string, int>>("stat/numberofexplicitsongsbyartists");
             }
             private set { OnPropertyChanged(); }
         }
-        public List<string> AllLengthByCountries
+        public List<KeyValuePair<string, int>> AllLengthByCountries
         {
             get
             {
-                var res = rest.Get<KeyValuePair<string, int>>("stat/lengthofallsongsbycountries");
-                List<string> w = new List<string>();
-                res.ForEach(x => w.Add($"{x.Key}:  {x.Value}"));
-                return w;
+                return rest.Get<KeyValuePair<string, int>>("stat/lengthofallsongsbycountries");
             }
             private set { OnPropertyChanged(); }
         }
-        public List<string> LovesongsAfter2015
+        public List<KeyValuePair<string, int>> LovesongsAfter2015
         {
             get
             {
-                var res = rest.Get<KeyValuePair<string, int>>("stat/numberoflovesongsafter2015byartists");
-                List<string> w = new List<string>();
-                res.ForEach(x => w.Add($"{x.Key}:  {x.Value}"));
-                return w;
+                return rest.Get<KeyValuePair<string, int>>("stat/numberoflovesongsafter2015byartists");
             }
             private set { OnPropertyChanged(); }
         }

@@ -9,6 +9,9 @@
     <Window.DataContext>
         <local:NCWindowViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <local:DoubleToTwoDecimalDoubleConverter x:Key="2decConv"/> 
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -31,7 +34,10 @@
         <ListBox x:Name="lbox1" Grid.Column="0" ItemsSource="{Binding GreaterThan8Albums}" Grid.Row="3" Background="Black" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding}" Foreground="AliceBlue"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Key}" Foreground="AliceBlue" HorizontalContentAlignment="Left" ContentStringFormat=" {0}:"/>
+                        <Label Content="{Binding Value}" Foreground="AliceBlue" HorizontalContentAlignment="Right" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -42,7 +48,10 @@
         <ListBox x:Name="lbox2" Grid.Column="1" ItemsSource="{Binding AVGLengthByAlbum}" Grid.Row="3" Background="Black" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding}" Foreground="AliceBlue"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Key}" Foreground="AliceBlue" HorizontalContentAlignment="Left" ContentStringFormat=" {0}:"/>
+                        <Label Content="{Binding Value, Converter={StaticResource 2decConv}}" Foreground="AliceBlue" HorizontalContentAlignment="Right" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -51,7 +60,10 @@
         <ListBox x:Name="lbox3" Grid.Column="2" ItemsSource="{Binding ExplicitSongsByArtist}" Grid.Row="3" Background="Black" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding}" Foreground="AliceBlue"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Key}" Foreground="AliceBlue" HorizontalContentAlignment="Left" ContentStringFormat=" {0}:"/>
+                        <Label Content="{Binding Value}" Foreground="AliceBlue" HorizontalContentAlignment="Right" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -60,8 +72,11 @@
         <ListBox x:Name="lbox4" Grid.Column="3" ItemsSource="{Binding AllLengthByCountries}" Grid.Row="3" Background="Black">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding}" Foreground="AliceBlue"/>
-                 </DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Key}" Foreground="AliceBlue" HorizontalContentAlignment="Left" ContentStringFormat=" {0}:"/>
+                        <Label Content="{Binding Value}" Foreground="AliceBlue" HorizontalContentAlignment="Right" />
+                    </StackPanel>
+                </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
 
@@ -69,7 +84,10 @@
         <ListBox x:Name="lbox5" Grid.Column="4" ItemsSource="{Binding LovesongsAfter2015}" Grid.Row="3" Background="Black" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding}" Foreground="AliceBlue"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Key}" Foreground="AliceBlue" HorizontalContentAlignment="Left" ContentStringFormat=" {0}:"/>
+                        <Label Content="{Binding Value}" Foreground="AliceBlue" HorizontalContentAlignment="Right" />
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
