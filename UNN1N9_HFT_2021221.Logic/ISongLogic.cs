@@ -14,5 +14,8 @@ namespace UNN1N9_HFT_2021221.Logic
         IEnumerable<KeyValuePair<string, int>> NumberOfExplicitSongsByArtists();
         IEnumerable<KeyValuePair<string, int>> LengthOfAllSongsByCountries();
         IEnumerable<KeyValuePair<string, int>> NumberOfLoveSongsAfter2015ByArtists();
+        IEnumerable<Song> LoveSongsFromUSA();
+        IEnumerable<Song> ExplicitSongsAfter2010();
+        public IEnumerable<Song> AlternativeLoveSongsWithAR7();
     }
 }

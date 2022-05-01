@@ -1,5 +1,9 @@
 ﻿let songs = [];
+let usasongs = [];
+let explicitsongs = [];
+let ar7songs = [];
 let connection = null;
+let songIDToUpdate = -1;
 getdata();
 setupSignalR();
 
@@ -44,6 +48,24 @@ async function getdata() {
             songs = y;
             display();
         });
+    await fetch('http://localhost:35739/stat/lovesongsfromusa')
+        .then(x => x.json())
+        .then(y => {
+            usasongs = y;
+            display();
+        });
+    await fetch('http://localhost:35739/stat/explicitsongsafter2010')
+        .then(x => x.json())
+        .then(y => {
+            explicitsongs = y;
+            display();
+        });
+    await fetch('http://localhost:35739/stat/alternativelovesongswithar7')
+        .then(x => x.json())
+        .then(y => {
+            ar7songs = y;
+            display();
+        });
 }
 
 function display() {
@@ -58,9 +80,84 @@ function display() {
             t.isExplicit + "</td><td>" +
             t.isLoveSong + "</td><td>" +
         `<button type="button" onclick="remove(${t.songID})">Delete</button>` +
-        `<button type="button" onclick="showupdate(${t.songID})">Delete</button>` +
+        `<button type="button" onclick="showupdate(${t.songID})">Update</button>` +
             "</td ></tr > ";
     });
+    document.getElementById('resultarea2').innerHTML = "";
+    usasongs.forEach(t => {
+        document.getElementById('resultarea2').innerHTML +=
+            "<tr><td>" + t.songID + "</td><td>" +
+            t.songName + "</td><td>" +
+            t.style +
+            "</td ></tr > ";
+    });
+    document.getElementById('resultarea3').innerHTML = "";
+    explicitsongs.forEach(t => {
+        document.getElementById('resultarea3').innerHTML +=
+            "<tr><td>" + t.songID + "</td><td>" +
+            t.songName + "</td><td>" +
+            t.style +
+            "</td ></tr > ";
+    });
+    document.getElementById('resultarea4').innerHTML = "";
+    ar7songs.forEach(t => {
+        document.getElementById('resultarea4').innerHTML +=
+            "<tr><td>" + t.songID + "</td><td>" +
+            t.songName + "</td><td>" +
+            t.style +
+            "</td ></tr > ";
+    });
+}
+
+function showupdate(id) {
+    document.getElementById('songnametoupdate').value = songs.find(t => t['songID'] == id)['songName'];
+    document.getElementById('albumidtoupdate').value = songs.find(t => t['songID'] == id)['albumID'];
+    document.getElementById('styletoupdate').value = songs.find(t => t['songID'] == id)['style'];
+    document.getElementById('lengthtoupdate').value = songs.find(t => t['songID'] == id)['length'];
+    document.querySelector('.explicittoupdate').checked = songs.find(t => t['songID'] == id)['isExplicit'];
+    document.querySelector('.lovesongtoupdate').checked = songs.find(t => t['songID'] == id)['isLoveSong'];
+    document.getElementById('updateformdiv').style.display = 'flex';
+    songIDToUpdate = id;
+}
+
+function update() {
+    document.getElementById('updateformdiv').style.display = 'none';
+    let name = document.getElementById('songnametoupdate').value;
+    console.log(name);
+    let Style = document.getElementById('styletoupdate').value;
+    console.log(Style);
+    let Length = document.getElementById('lengthtoupdate').value;
+    console.log(Length);
+    let AlbumID = document.getElementById('albumidtoupdate').value;
+    console.log(AlbumID);
+    let exp = document.querySelector('.explicittoupdate').checked;
+    console.log(exp);
+    let love = document.querySelector('.lovesongtoupdate').checked;
+    console.log(love);
+
+    fetch('http://localhost:35739/song', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json', },
+        body: JSON.stringify(
+            {
+                songID: songIDToUpdate,
+                songName: name,
+                length: Length,
+                style: Style,
+                albumID: AlbumID,
+                isExplicit: exp,
+                isLoveSong: love
+            }),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            getdata();
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
 }
 
 function create() {

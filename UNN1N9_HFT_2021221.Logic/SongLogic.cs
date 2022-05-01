@@ -103,6 +103,45 @@ namespace UNN1N9_HFT_2021221.Logic
                    (g.Key, g.Count(y => y.IsLoveSong.Equals(true)));
         }
 
+        //love songs from usa
+        public IEnumerable<Song> LoveSongsFromUSA()
+        {
+            return from x in songRepo.ReadAll()
+                   where x.IsLoveSong == true && x.Album.Artist.CountryOfOrigin == "USA"
+                   select new Song()
+                   {
+                       SongID = x.SongID,
+                       SongName = x.SongName,
+                       Style = x.Style
+                   };
+        }
+
+        //explicit songs after 2010
+        public IEnumerable<Song> ExplicitSongsAfter2010()
+        {
+            return from x in songRepo.ReadAll()
+                   where x.IsExplicit == true && x.Album.Year > 2010
+                   select new Song()
+                   {
+                       SongID = x.SongID,
+                       SongName = x.SongName,
+                       Style = x.Style
+                   };
+        }
+
+        //alternative love songs with bigger album rating than 7
+        public IEnumerable<Song> AlternativeLoveSongsWithAR7()
+        {
+            return from x in songRepo.ReadAll()
+                   where x.IsLoveSong == true && x.Style == "ALTERNATIVE" && x.Album.Rating > 7
+                   select new Song()
+                   {
+                       SongID = x.SongID,
+                       SongName = x.SongName,
+                       Style = x.Style
+                   };
+        }
+
         #endregion
     }
 }

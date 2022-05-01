@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using UNN1N9_HFT_2021221.Logic;
+using UNN1N9_HFT_2021221.Models;
 
 namespace UNN1N9_HFT_2021221.Endpoint.Controllers
 {
@@ -54,6 +55,27 @@ namespace UNN1N9_HFT_2021221.Endpoint.Controllers
         public IEnumerable<KeyValuePair<string, int>> NumberOfAlbumsWBiggerRatingThan8ByCountries()
         {
             return albumLogic.NumberOfAlbumsWBiggerRatingThan8ByCountries();
+        }
+
+        // GET: /stat/lovesongsfromusa
+        [HttpGet]
+        public IEnumerable<Song> LoveSongsFromUSA()
+        {
+            return songLogic.LoveSongsFromUSA();
+        }
+
+        // GET: /stat/explicitsongsafter2010
+        [HttpGet]
+        public IEnumerable<Song> ExplicitSongsAfter2010()
+        {
+            return songLogic.ExplicitSongsAfter2010();
+        }
+
+        // GET: /stat/alternativelovesongswithar7
+        [HttpGet]
+        public IEnumerable<Song> AlternativeLoveSongsWithAR7()
+        {
+            return songLogic.AlternativeLoveSongsWithAR7();
         }
     }
 }
